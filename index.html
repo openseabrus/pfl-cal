@@ -20,27 +20,6 @@
         background-color: rgb(243, 243, 243);
         font-family: "Inter", sans-serif;
       }
-      .calendar-type-selector {
-        margin: 20px 0;
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .calendar-type-selector label {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
-        font-size: 16px;
-        line-height: 1;
-      }
-      .calendar-type-selector input[type="radio"] {
-        cursor: pointer;
-        width: 18px;
-        height: 18px;
-        margin: 0;
-      }
       .links {
         margin: 40px 20px;
         display: flex;
@@ -86,27 +65,6 @@
   </head>
   <body>
     <h1>Subscribe to this calendar to keep track of PFL events</h1>
-    <div class="calendar-type-selector">
-      <label>
-        <input
-          type="radio"
-          name="calendar-type"
-          value="all"
-          checked
-          onchange="updateCalendarLinks('all')"
-        />
-        <span>All PFL Events</span>
-      </label>
-      <label>
-        <input
-          type="radio"
-          name="calendar-type"
-          value="ppv"
-          onchange="updateCalendarLinks('ppv')"
-        />
-        <span>PPV Events Only</span>
-      </label>
-    </div>
     <div class="links">
       <a
         class="sub-link"
@@ -137,18 +95,5 @@
         >Source code on GitHub</a
       >
     </p>
-    <script>
-      function updateCalendarLinks(type) {
-        const filename = type === "ppv" ? "PFL-PPV.ics" : "PFL.ics";
-        const baseUrl =
-          "webcal://raw.githubusercontent.com/openseabrus/pfl-cal/ics/";
-        const fullUrl = baseUrl + filename;
-
-        document.getElementById("apple-link").href = fullUrl;
-        document.getElementById("google-link").href =
-          "https://calendar.google.com/calendar/u/0/r?cid=" + fullUrl;
-        document.getElementById("manual-url").textContent = fullUrl;
-      }
-    </script>
   </body>
 </html>

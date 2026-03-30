@@ -143,5 +143,4 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
-PFL-PPV.ics
 PFL.ics

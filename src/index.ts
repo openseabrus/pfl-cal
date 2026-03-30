@@ -15,10 +15,7 @@ const wallTimeParts = (unixSec: string): DateArray => {
   return [d.year(), d.month() + 1, d.date(), d.hour(), d.minute()];
 };
 
-/**
- * Builds `PFL.ics` and `PFL-PPV.ics` in the current directory from scraped events.
- */
-async function createICS() {
+async function createICS(): Promise<void> {
   try {
     const events = await getAllDetailedEvents();
     if (!events?.length) throw new Error("No events retrieved");
@@ -32,14 +29,6 @@ async function createICS() {
 
     const eventsData = createEvents(formattedEvents).value;
     if (eventsData) fs.writeFileSync("PFL.ics", eventsData);
-
-    const ppvEvents = events;
-    const formattedPPVEvents = ppvEvents.map((event) =>
-      formatEventForCalendar(event, "PFL-PPV"),
-    );
-
-    const ppvEventsData = createEvents(formattedPPVEvents).value;
-    if (ppvEventsData) fs.writeFileSync("PFL-PPV.ics", ppvEventsData);
   } catch (error) {
     console.error(error);
   }
