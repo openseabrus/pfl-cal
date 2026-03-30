@@ -1,6 +1,19 @@
 import { getAllDetailedEvents } from "./scrape.js";
 import * as fs from "fs";
 import { createEvents, type DateArray, type EventAttributes } from "ics";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js";
+import timezone from "dayjs/plugin/timezone.js";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+const EVENT_TZ = "America/New_York";
+
+const wallTimeParts = (unixSec: string): DateArray => {
+  const d = dayjs.unix(parseInt(unixSec, 10)).tz(EVENT_TZ);
+  return [d.year(), d.month() + 1, d.date(), d.hour(), d.minute()];
+};
 
 /**
  * Builds `PFL.ics` and `PFL-PPV.ics` in the current directory from scraped events.
@@ -10,7 +23,6 @@ async function createICS() {
     const events = await getAllDetailedEvents();
     if (!events?.length) throw new Error("No events retrieved");
 
-    // Convert event details in the format in accordance with the ICS generator
     const formattedEvents = events.map((event) =>
       formatEventForCalendar(event, "PFL"),
     );
@@ -21,15 +33,11 @@ async function createICS() {
     const eventsData = createEvents(formattedEvents).value;
     if (eventsData) fs.writeFileSync("PFL.ics", eventsData);
 
-    // Filter for PPV events only
-    const ppvEvents = events.filter(
-      (event) => !event.name.includes("Fight Night"),
-    );
+    const ppvEvents = events;
     const formattedPPVEvents = ppvEvents.map((event) =>
       formatEventForCalendar(event, "PFL-PPV"),
     );
 
-    // Create PFL-PPV.ics
     const ppvEventsData = createEvents(formattedPPVEvents).value;
     if (ppvEventsData) fs.writeFileSync("PFL-PPV.ics", ppvEventsData);
   } catch (error) {
@@ -41,20 +49,12 @@ function formatEventForCalendar(
   event: PFLEvent,
   calName = "PFL",
 ): EventAttributes {
-  const date = new Date(parseInt(event.date) * 1000);
-  const start: DateArray = [
-    date.getFullYear(),
-    date.getMonth() + 1,
-    date.getDate(),
-    date.getHours(),
-    date.getMinutes(),
-  ];
+  const start = wallTimeParts(event.date);
   const duration: { hours: number } = { hours: 3 };
   const title = event.name;
   let description = "";
 
-  // Distinguish between main card and prelims if this information has been
-  // announced by the UFC, otherwise list all fights without categorizing
+  const mainStart = dayjs.unix(parseInt(event.date, 10));
   if (event.fightCard.length) description = `${event.fightCard.join("\n")}\n`;
   if (event.mainCard.length)
     description += `Main Card\n--------------------\n${event.mainCard.join(
@@ -63,8 +63,8 @@ function formatEventForCalendar(
   if (event.prelims.length) {
     description += "\nPrelims";
     if (event.prelimsTime) {
-      const prelimsTime = new Date(parseInt(event.prelimsTime) * 1000);
-      const hoursAgo = (+date - +prelimsTime) / 1000 / 60 / 60;
+      const prelimsTime = dayjs.unix(parseInt(event.prelimsTime, 10));
+      const hoursAgo = mainStart.diff(prelimsTime, "hour", true);
       if (hoursAgo > 0) description += ` (${hoursAgo} hrs before Main)`;
     }
     description += `\n--------------------\n${event.prelims.join("\n")}\n`;
@@ -72,10 +72,10 @@ function formatEventForCalendar(
   if (event.earlyPrelims.length) {
     description += "\nEarly Prelims";
     if (event.earlyPrelimsTime) {
-      const earlyPrelimsTime = new Date(
-        parseInt(event.earlyPrelimsTime) * 1000,
+      const earlyPrelimsTime = dayjs.unix(
+        parseInt(event.earlyPrelimsTime, 10),
       );
-      const hoursAgo = (+date - +earlyPrelimsTime) / 1000 / 60 / 60;
+      const hoursAgo = mainStart.diff(earlyPrelimsTime, "hour", true);
       if (hoursAgo > 0) description += ` (${hoursAgo} hrs before Main)`;
     }
     description += `\n--------------------\n${event.earlyPrelims.join("\n")}\n`;
@@ -83,8 +83,6 @@ function formatEventForCalendar(
   if (description.length) description += "\n";
   description += `${event.url}`;
 
-  // Get current date and time to communicate to the user how up-to-date
-  // the event details are
   const dateTimestr = new Date().toLocaleString("en-US", {
     month: "short",
     day: "numeric",

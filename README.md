@@ -33,3 +33,4 @@ The three biggest points that this aims to address, which I found lacking in oth
 **To run locally:**
 
 - Clone this repo, run the commands `npm install`, then `npm start`, and out spits your `PFL.ics` file with all the relevant events. The secondary feed `PFL-PPV.ics` is written alongside it.
+- Run `npm run fetch` to log scraped upcoming events (and placeholders) without writing ICS files.

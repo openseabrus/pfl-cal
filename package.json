@@ -5,9 +5,10 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx tsx src/index.ts"
+    "start": "npx tsx src/index.ts",
+    "fetch": "npx tsx src/fetch.ts"
   },
-  "author": "Clarence Chan",
+  "author": "openseabrus",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.12.0",
@@ -17,5 +18,8 @@
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "dayjs": "^1.11.20"
+  }
 }
