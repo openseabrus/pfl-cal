@@ -3,8 +3,7 @@ import * as fs from "fs";
 import { createEvents, type DateArray, type EventAttributes } from "ics";
 
 /**
- * Extracts the details of recent and upcoming UFC events, then creates an
- * ICS file named "UFC.ics" in the current directory containing these events
+ * Builds `PFL.ics` and `PFL-PPV.ics` in the current directory from scraped events.
  */
 async function createICS() {
   try {
@@ -13,35 +12,34 @@ async function createICS() {
 
     // Convert event details in the format in accordance with the ICS generator
     const formattedEvents = events.map((event) =>
-      formatEventForCalendar(event, "UFC")
+      formatEventForCalendar(event, "PFL"),
     );
 
     console.log("\nDetailed events:");
     console.log(formattedEvents);
 
-    // Create UFC.ics
     const eventsData = createEvents(formattedEvents).value;
-    if (eventsData) fs.writeFileSync("UFC.ics", eventsData);
+    if (eventsData) fs.writeFileSync("PFL.ics", eventsData);
 
     // Filter for PPV events only
     const ppvEvents = events.filter(
-      (event) => !event.name.includes("Fight Night")
+      (event) => !event.name.includes("Fight Night"),
     );
     const formattedPPVEvents = ppvEvents.map((event) =>
-      formatEventForCalendar(event, "UFC-PPV")
+      formatEventForCalendar(event, "PFL-PPV"),
     );
 
-    // Create UFC-PPV.ics
+    // Create PFL-PPV.ics
     const ppvEventsData = createEvents(formattedPPVEvents).value;
-    if (ppvEventsData) fs.writeFileSync("UFC-PPV.ics", ppvEventsData);
+    if (ppvEventsData) fs.writeFileSync("PFL-PPV.ics", ppvEventsData);
   } catch (error) {
     console.error(error);
   }
 }
 
 function formatEventForCalendar(
-  event: UFCEvent,
-  calName = "UFC"
+  event: PFLEvent,
+  calName = "PFL",
 ): EventAttributes {
   const date = new Date(parseInt(event.date) * 1000);
   const start: DateArray = [
@@ -60,7 +58,7 @@ function formatEventForCalendar(
   if (event.fightCard.length) description = `${event.fightCard.join("\n")}\n`;
   if (event.mainCard.length)
     description += `Main Card\n--------------------\n${event.mainCard.join(
-      "\n"
+      "\n",
     )}\n`;
   if (event.prelims.length) {
     description += "\nPrelims";
@@ -75,7 +73,7 @@ function formatEventForCalendar(
     description += "\nEarly Prelims";
     if (event.earlyPrelimsTime) {
       const earlyPrelimsTime = new Date(
-        parseInt(event.earlyPrelimsTime) * 1000
+        parseInt(event.earlyPrelimsTime) * 1000,
       );
       const hoursAgo = (+date - +earlyPrelimsTime) / 1000 / 60 / 60;
       if (hoursAgo > 0) description += ` (${hoursAgo} hrs before Main)`;

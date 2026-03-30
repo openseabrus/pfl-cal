@@ -1,4 +1,4 @@
-type UFCEvent = {
+type PFLEvent = {
   name: string;
   url: URL;
   date: string;

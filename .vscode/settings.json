@@ -1,0 +1,37 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#3cf141",
+    "activityBar.background": "#3cf141",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#6e6af4",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "editorGroup.border": "#3cf141",
+    "panel.border": "#3cf141",
+    "sash.hoverBorder": "#3cf141",
+    "sideBar.border": "#3cf141",
+    "tab.activeBorder": "#3cf141",
+    "titleBar.activeBackground": "#11e917",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.border": "#11e917",
+    "titleBar.inactiveBackground": "#11e91799",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#11e917",
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.github": false,
+    "**/.idea": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.vscode": true
+  },
+  "explorerExclude.backup": {}
+}

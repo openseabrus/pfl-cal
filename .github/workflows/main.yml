@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ics
-      - name: Create UFC.ics
+      - name: Create PFL.ics
         run: |
           npm install
           npm start
@@ -21,6 +21,6 @@ jobs:
         run: |
           git config --global user.name "Clarence Chan"
           git config --global user.email "clarencechaan@icloud.com"
-          git add UFC.ics UFC-PPV.ics
-          git commit -m "Update UFC.ics and UFC-PPV.ics"
+          git add PFL.ics PFL-PPV.ics
+          git commit -m "Update PFL.ics and PFL-PPV.ics"
           git push -u origin ics

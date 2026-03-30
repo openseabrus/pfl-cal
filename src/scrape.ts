@@ -2,7 +2,7 @@ import { parse, HTMLElement } from "node-html-parser";
 import { decode } from "html-entities";
 
 /**
- * Returns an array of URLs of recent and upcoming UFC events
+ * Returns URLs for recent and upcoming events from the configured listing pages.
  */
 async function getEventURLs() {
   // Get first two pages of event urls
@@ -33,15 +33,15 @@ async function getEventURLsFromPageURL(url: URL) {
 
     // Extract the URLs of the relevant events from the HTML element
     const eventURLElements = root.querySelectorAll(
-      ".c-card-event--result__headline"
+      ".c-card-event--result__headline",
     );
     const eventURLs = eventURLElements.map(
       (html) =>
         new URL(
           `https://www.ufc.com${(html.firstChild as HTMLElement).getAttribute(
-            "href"
-          )}`
-        )
+            "href",
+          )}`,
+        ),
     );
 
     return eventURLs;
@@ -101,7 +101,7 @@ function convertLiToStr(li: HTMLElement) {
 
   const ranks = li
     .querySelectorAll(
-      ".js-listing-fight__corner-rank.c-listing-fight__corner-rank"
+      ".js-listing-fight__corner-rank.c-listing-fight__corner-rank",
     )
     .map((rank) => rank?.textContent.trim());
 
@@ -116,7 +116,7 @@ function convertLiToStr(li: HTMLElement) {
 }
 
 /**
- * Returns the fight card details of a UFC event given its URL
+ * Returns fight card details for the event at the given URL.
  */
 async function getDetailsFromEventURL(url: URL) {
   try {
@@ -160,16 +160,16 @@ async function getDetailsFromEventURL(url: URL) {
     console.log(`\nGetting details from url: ${url.href}`);
 
     const mainCardElements = root.querySelectorAll(
-      "#main-card .l-listing__item"
+      "#main-card .l-listing__item",
     );
     // Check if main card and prelims have been announced
     if (mainCardElements.length) {
       // Main card has been announced, extract prelims
       const prelimsElements = root.querySelectorAll(
-        "#prelims-card .l-listing__item"
+        "#prelims-card .l-listing__item",
       );
       const earlyPrelimsElements = root.querySelectorAll(
-        "#early-prelims .l-listing__item"
+        "#early-prelims .l-listing__item",
       );
 
       mainCard = mainCardElements.map(convertLiToStr);
@@ -181,7 +181,7 @@ async function getDetailsFromEventURL(url: URL) {
     } else {
       // Main card has not been announced, extract entire fight card
       const fightCardElements = root.querySelectorAll(
-        ".l-listing__group--bordered .l-listing__item"
+        ".l-listing__group--bordered .l-listing__item",
       );
 
       fightCard = fightCardElements.map(convertLiToStr);
@@ -196,7 +196,7 @@ async function getDetailsFromEventURL(url: URL) {
       throw new Error("Failed to retrieve event details");
     }
 
-    const details: UFCEvent = {
+    const details: PFLEvent = {
       name,
       url,
       date,
@@ -216,15 +216,14 @@ async function getDetailsFromEventURL(url: URL) {
 }
 
 /**
- * Returns an array of details of recent and upcoming UFC events
+ * Returns details for each event discovered on the listing pages.
  */
 async function getAllDetailedEvents() {
   try {
     const eventURLs = await getEventURLs();
 
-    // Get UFC events from URLs
     const detailedEvents = await Promise.all(
-      eventURLs?.map(getDetailsFromEventURL)
+      eventURLs?.map(getDetailsFromEventURL),
     );
     return detailedEvents;
   } catch (error) {
