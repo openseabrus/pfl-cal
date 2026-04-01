@@ -20,6 +20,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@touch4it/ical-timezones": "^1.9.0",
     "dayjs": "^1.11.20"
   }
 }

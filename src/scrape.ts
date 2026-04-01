@@ -11,6 +11,14 @@ const PFL_ORIGIN = "https://pflmma.com";
 const EVENTS_LISTING = new URL("/events", PFL_ORIGIN);
 const AMERICA_NEW_YORK = "America/New_York";
 const PLACEHOLDER_COPY = "More info coming soon";
+const GOOGLE_CALENDAR_HOST = "calendar.google.com";
+const DATE_PARTS_FORMAT = "YYYY-MM-DD HH:mm:ss";
+const GOOGLE_DATE_TOKEN_FORMAT = "YYYYMMDDTHHmmss";
+const DEFAULT_EVENT_TIMEZONE = AMERICA_NEW_YORK;
+
+const parseInt10 = (value: string): number => Number.parseInt(value, 10);
+const unixToEt = (unixSeconds: number) =>
+  dayjs.unix(unixSeconds).tz(AMERICA_NEW_YORK);
 
 const SHORT_MONTH: Record<string, number> = {
   jan: 0,
@@ -44,8 +52,8 @@ interface EventSession {
   readonly eventUrl: string;
 }
 
-const slugify = (s: string): string =>
-  s
+const slugify = (input: string): string =>
+  input
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
@@ -53,7 +61,7 @@ const slugify = (s: string): string =>
 
 const mergeCookieHeader = (res: Response): string => {
   const raw = res.headers.getSetCookie?.() ?? [];
-  return raw.map((c) => c.split(";")[0]).join("; ");
+  return raw.map((cookie) => cookie.split(";")[0]).join("; ");
 };
 
 export const isNewsletterUrl = (url: URL): boolean =>
@@ -63,20 +71,20 @@ export const isNewsletterUrl = (url: URL): boolean =>
 const parseListingDateLine = (
   line: string,
 ): { readonly month: number; readonly day: number } | null => {
-  const m = line.match(/,\s*([A-Za-z]{3})\s+(\d{1,2})\s*$/);
-  if (!m?.[1] || !m[2]) return null;
-  const monKey = m[1].toLowerCase();
-  const month = SHORT_MONTH[monKey];
+  const dateMatch = line.match(/,\s*([A-Za-z]{3})\s+(\d{1,2})\s*$/);
+  if (!dateMatch?.[1] || !dateMatch[2]) return null;
+  const monthKey = dateMatch[1].toLowerCase();
+  const month = SHORT_MONTH[monthKey];
   if (month === undefined) return null;
-  return { month, day: parseInt(m[2], 10) };
+  return { month, day: parseInt10(dateMatch[2]) };
 };
 
-const to24h = (hour: number, ap: string): number => {
-  const pm = ap.toLowerCase() === "pm";
-  let h = hour;
-  if (pm && h !== 12) h += 12;
-  if (!pm && h === 12) h = 0;
-  return h;
+const to24h = (hour: number, meridiem: string): number => {
+  const isPostMeridiem = meridiem.toLowerCase() === "pm";
+  let hour24 = hour;
+  if (isPostMeridiem && hour24 !== 12) hour24 += 12;
+  if (!isPostMeridiem && hour24 === 12) hour24 = 0;
+  return hour24;
 };
 
 const parse12hParts = (
@@ -84,8 +92,8 @@ const parse12hParts = (
   miRaw: string | undefined,
   ap: string,
 ): { readonly hour: number; readonly minute: number } => {
-  const hour = parseInt(hStr, 10);
-  const minute = miRaw ? parseInt(miRaw, 10) : 0;
+  const hour = parseInt10(hStr);
+  const minute = miRaw ? parseInt10(miRaw) : 0;
   return { hour: to24h(hour, ap), minute };
 };
 
@@ -105,100 +113,204 @@ const parseMainCardTimeFromListingLine = (
   if (tailMain?.[1] && tailMain[3]) {
     return parse12hParts(tailMain[1], tailMain[2], tailMain[3]);
   }
-  const any = line.match(/(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*ET/i);
-  if (any?.[1] && any[3]) {
-    return parse12hParts(any[1], any[2], any[3]);
+  const etTimes = [...line.matchAll(/(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*ET/gi)];
+  if (etTimes.length === 1) {
+    const first = etTimes[0];
+    if (first?.[1] && first[3]) {
+      return parse12hParts(first[1], first[2], first[3]);
+    }
   }
   return null;
 };
 
 const unixEtWall = (
-  month0: number,
+  monthIndex: number,
   day: number,
   year: number,
   hour: number,
   minute: number,
 ): number => {
-  const y = `${year}-${String(month0 + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-  const hm = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
-  return dayjs.tz(`${y} ${hm}`, "YYYY-MM-DD HH:mm", AMERICA_NEW_YORK).unix();
+  const dateStamp = `${year}-${String(monthIndex + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  const timeStamp = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00`;
+  return dayjs
+    .tz(`${dateStamp} ${timeStamp}`, DATE_PARTS_FORMAT, AMERICA_NEW_YORK)
+    .utc()
+    .unix();
+};
+
+const unixFromUtcToken = (googleDateToken: string): number | null => {
+  const parsed = dayjs.utc(googleDateToken, GOOGLE_DATE_TOKEN_FORMAT, true);
+  if (!parsed.isValid()) return null;
+  return parsed.unix();
+};
+
+const unixFromZonedToken = (
+  googleDateToken: string,
+  timezoneName: string,
+): number | null => {
+  const parsed = dayjs.tz(
+    googleDateToken,
+    GOOGLE_DATE_TOKEN_FORMAT,
+    timezoneName,
+  );
+  if (!parsed.isValid()) return null;
+  return parsed.utc().unix();
 };
 
 const resolveEventYear = (month: number, day: number): number => {
   const now = dayjs().tz(AMERICA_NEW_YORK);
-  let y = now.year();
-  let candidate = dayjs.tz(
-    `${y}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
+  let candidateYear = now.year();
+  const candidateDate = dayjs.tz(
+    `${candidateYear}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
     "YYYY-MM-DD",
     AMERICA_NEW_YORK,
   );
-  if (candidate.isBefore(now.subtract(1, "day").startOf("day"))) {
-    y += 1;
+  if (candidateDate.isBefore(now.subtract(1, "day").startOf("day"))) {
+    candidateYear += 1;
   }
-  return y;
+  return candidateYear;
 };
 
 const listingDerivedMainUnix = (row: ListingRow): number => {
-  const md = parseListingDateLine(row.dateLine);
-  if (!md) {
+  const listingDate = parseListingDateLine(row.dateLine);
+  if (!listingDate) {
     return dayjs().unix();
   }
-  const year = resolveEventYear(md.month, md.day);
-  const t = parseMainCardTimeFromListingLine(row.timeLine) ?? {
+  const year = resolveEventYear(listingDate.month, listingDate.day);
+  const mainCardTime = parseMainCardTimeFromListingLine(row.timeLine) ?? {
     hour: 21,
     minute: 0,
   };
-  return unixEtWall(md.month, md.day, year, t.hour, t.minute);
+  return unixEtWall(
+    listingDate.month,
+    listingDate.day,
+    year,
+    mainCardTime.hour,
+    mainCardTime.minute,
+  );
 };
 
 const htmlDecodedForMatch = (html: string): string =>
   html.replace(/&amp;/g, "&").replace(/&quot;/g, '"');
 
-const parseGoogleCalendarStartUnix = (html: string): number | null => {
-  const dec = htmlDecodedForMatch(html);
-  const m = dec.match(/dates=(\d{8})T(\d{6})/);
-  const ds = m?.[1];
-  const ts = m?.[2];
-  if (!ds || !ts) return null;
-  const y = parseInt(ds.slice(0, 4), 10);
-  const mo = parseInt(ds.slice(4, 6), 10) - 1;
-  const d = parseInt(ds.slice(6, 8), 10);
-  const hh = parseInt(ts.slice(0, 2), 10);
-  const mi = parseInt(ts.slice(2, 4), 10);
-  return unixEtWall(mo, d, y, hh, mi);
+const parseCalendarStartToken = (
+  token: string,
+): {
+  readonly dateToken: string;
+  readonly isUtc: boolean;
+} | null => {
+  const tokenMatch = token.match(/^(\d{8}T\d{6})(Z?)$/);
+  const dateToken = tokenMatch?.[1];
+  if (!dateToken) return null;
+  return {
+    dateToken,
+    isUtc: tokenMatch?.[2] === "Z",
+  };
+};
+
+const parseGoogleCalendarHref = (html: string): URL | null => {
+  const decodedHtml = htmlDecodedForMatch(html);
+  const calendarUrlMatch = decodedHtml.match(
+    /https:\/\/calendar\.google\.com\/calendar\/render\?[^"'\s]+/i,
+  );
+  const href = calendarUrlMatch?.[0];
+  if (!href) return null;
+  try {
+    return new URL(href);
+  } catch {
+    return null;
+  }
+};
+
+interface GoogleCalendarStart {
+  readonly unix: number;
+  readonly timezone: string;
+}
+
+const parseGoogleCalendarStart = (html: string): GoogleCalendarStart | null => {
+  const url = parseGoogleCalendarHref(html);
+  if (!url || url.hostname !== GOOGLE_CALENDAR_HOST) return null;
+  const datesValue = url.searchParams.get("dates");
+  if (!datesValue) return null;
+  const startToken = datesValue.split("/")[0];
+  if (!startToken) return null;
+  const startDetails = parseCalendarStartToken(startToken);
+  if (!startDetails) return null;
+
+  const calendarTimezone = url.searchParams.get("ctz") ?? DEFAULT_EVENT_TIMEZONE;
+  if (startDetails.isUtc) {
+    const unix = unixFromUtcToken(startDetails.dateToken);
+    if (unix === null) return null;
+    return { unix, timezone: calendarTimezone };
+  }
+  const unixInCalendarTimezone = unixFromZonedToken(
+    startDetails.dateToken,
+    calendarTimezone,
+  );
+  if (unixInCalendarTimezone !== null) {
+    return { unix: unixInCalendarTimezone, timezone: calendarTimezone };
+  }
+  const unixInDefaultTimezone = unixFromZonedToken(
+    startDetails.dateToken,
+    DEFAULT_EVENT_TIMEZONE,
+  );
+  if (unixInDefaultTimezone === null) return null;
+  return { unix: unixInDefaultTimezone, timezone: DEFAULT_EVENT_TIMEZONE };
 };
 
 const parseGoogleCalendarLocation = (html: string): string | null => {
-  const dec = htmlDecodedForMatch(html);
-  const m = dec.match(/[?&]location=([^&"]+)/);
-  const loc = m?.[1];
-  if (!loc) return null;
-  return decodeURIComponent(loc.replace(/\+/g, " "));
+  const decodedHtml = htmlDecodedForMatch(html);
+  const locationMatch = decodedHtml.match(/[?&]location=([^&"]+)/);
+  const encodedLocation = locationMatch?.[1];
+  if (!encodedLocation) return null;
+  return decodeURIComponent(encodedLocation.replace(/\+/g, " "));
 };
 
 const parseEventPageTitle = (html: string): string | null => {
   const root = parse(html);
-  return (
-    root.querySelector(".event-info-title")?.textContent?.trim() ?? null
-  );
+  return root.querySelector(".event-info-title")?.textContent?.trim() ?? null;
 };
 
-const parseEarlyCardUnix = (html: string, mainUnix: number): string | undefined => {
+const parseFirstCardUnix = (
+  html: string,
+  mainUnix: number,
+): string | undefined => {
   const root = parse(html);
-  const times = root.querySelectorAll(".event-info-box .event-info-time");
-  for (const el of times) {
-    const text = el.textContent ?? "";
-    const m = text.match(
-      /Early Card:\s*(\d{1,2}):(\d{2})\s*(AM|PM)\s*ET/i,
+  const timeElements = root.querySelectorAll(
+    ".event-info-box .event-info-time",
+  );
+  for (const timeElement of timeElements) {
+    const timeText = timeElement.textContent ?? "";
+    const earlyCardMatch = timeText.match(
+      /Early Card:\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\s*ET/i,
     );
-    if (!m?.[1] || !m[2] || !m[3]) continue;
-    let h = parseInt(m[1], 10);
-    const mi = parseInt(m[2], 10);
-    const ap = m[3];
-    h = to24h(h, ap);
-    const main = dayjs.unix(mainUnix).tz(AMERICA_NEW_YORK);
-    const u = unixEtWall(main.month(), main.date(), main.year(), h, mi);
-    return String(u);
+    if (!earlyCardMatch?.[1] || !earlyCardMatch[3]) continue;
+    let earlyCardHour = parseInt10(earlyCardMatch[1]);
+    const earlyCardMinute = earlyCardMatch[2]
+      ? parseInt10(earlyCardMatch[2])
+      : 0;
+    const earlyCardMeridiem = earlyCardMatch[3];
+    earlyCardHour = to24h(earlyCardHour, earlyCardMeridiem);
+    const mainCardDateTimeEt = unixToEt(mainUnix);
+    let earlyCardUnix = unixEtWall(
+      mainCardDateTimeEt.month(),
+      mainCardDateTimeEt.date(),
+      mainCardDateTimeEt.year(),
+      earlyCardHour,
+      earlyCardMinute,
+    );
+    const earlyCardDateTimeEt = unixToEt(earlyCardUnix);
+    if (earlyCardDateTimeEt.isAfter(mainCardDateTimeEt)) {
+      const previousDay = mainCardDateTimeEt.subtract(1, "day");
+      earlyCardUnix = unixEtWall(
+        previousDay.month(),
+        previousDay.date(),
+        previousDay.year(),
+        earlyCardHour,
+        earlyCardMinute,
+      );
+    }
+    return String(earlyCardUnix);
   }
   return undefined;
 };
@@ -214,20 +326,24 @@ const boutLinesFromFightCardHtml = (fragment: string): string[] => {
     if (!collapsed) continue;
     const weightEl = collapsed.querySelector("h5");
     const names = collapsed.querySelectorAll("h4.mb-0");
-    const n0 = names.at(0);
-    const n1 = names.at(1);
-    if (n0 === undefined || n1 === undefined || !weightEl) continue;
-    const a = n0.textContent?.trim() ?? "";
-    const b = n1.textContent?.trim() ?? "";
-    const wt = weightEl.textContent ?? "";
-    const wNum = wt.match(/\((\d+)\)/)?.[1] ?? "";
-    lines.push(decode(`• ${a} vs. ${b} @${wNum}`));
+    const name0 = names.at(0);
+    const name1 = names.at(1);
+    if (name0 === undefined || name1 === undefined || !weightEl) continue;
+    const firstFighterName = name0.textContent?.trim() ?? "";
+    const secondFighterName = name1.textContent?.trim() ?? "";
+    const weight = weightEl.textContent ?? "";
+    const weightNumber = weight.match(/\((\d+)\)/)?.[1] ?? "";
+    lines.push(
+      decode(`• ${firstFighterName} vs. ${secondFighterName} @${weightNumber}`),
+    );
   }
   return lines;
 };
 
 const newsletterPlaceholderUrl = (row: ListingRow): URL =>
-  new URL(`${PFL_ORIGIN}/newsletter#${slugify(`${row.title}-${row.dateLine}`)}`);
+  new URL(
+    `${PFL_ORIGIN}/newsletter#${slugify(`${row.title}-${row.dateLine}`)}`,
+  );
 
 const buildPlaceholderEvent = (row: ListingRow): PFLEvent => {
   const unix = listingDerivedMainUnix(row);
@@ -235,6 +351,7 @@ const buildPlaceholderEvent = (row: ListingRow): PFLEvent => {
     name: decode(row.title.trim()),
     url: newsletterPlaceholderUrl(row),
     date: String(unix),
+    timezone: DEFAULT_EVENT_TIMEZONE,
     location: decode(row.location.trim()),
     fightCard: [PLACEHOLDER_COPY],
     mainCard: [],
@@ -255,10 +372,10 @@ const parseEventHub = (hub: HTMLElement): ListingRow | null => {
   const location = card.querySelector("p.mb-4")?.textContent?.trim() ?? "";
   const ctas = card.querySelectorAll("a.btn-red-outline");
   let ctaEl: HTMLElement | null = null;
-  for (const a of ctas) {
-    const txt = a.textContent?.trim() ?? "";
+  for (const cta of ctas) {
+    const txt = cta.textContent?.trim() ?? "";
     if (/^(MATCHUPS|EVENT INFO|EVENT DETAILS)$/i.test(txt)) {
-      ctaEl = a;
+      ctaEl = cta;
       break;
     }
   }
@@ -292,18 +409,18 @@ export async function getUpcomingListingRows(): Promise<ListingRow[]> {
   const root = parse(text);
   const upcoming = root.querySelector("#nav-upcoming");
   if (!upcoming) {
-    throw new Error('Missing #nav-upcoming on PFL events page');
+    throw new Error("Missing #nav-upcoming on PFL events page");
   }
   const hubs = upcoming.querySelectorAll(".event-hub");
   const byKey = new Map<string, ListingRow>();
   for (const hub of hubs) {
     const row = parseEventHub(hub as HTMLElement);
     if (!row) continue;
-    const k = listingRowKey(row);
-    if (!byKey.has(k)) byKey.set(k, row);
+    const rowKey = listingRowKey(row);
+    if (!byKey.has(rowKey)) byKey.set(rowKey, row);
   }
   return [...byKey.values()];
-};
+}
 
 const fetchEventSession = async (eventUrl: string): Promise<EventSession> => {
   const res = await fetch(eventUrl, {
@@ -311,9 +428,8 @@ const fetchEventSession = async (eventUrl: string): Promise<EventSession> => {
   });
   const html = await res.text();
   const cookies = mergeCookieHeader(res);
-  const csrf =
-    html.match(/name="_token"\s+value="([^"]+)"/)?.[1] ?? '';
-  const eventTag = html.match(/var\s+event_tag\s*=\s*'([^']+)'/)?.[1] ?? '';
+  const csrf = html.match(/name="_token"\s+value="([^"]+)"/)?.[1] ?? "";
+  const eventTag = html.match(/var\s+event_tag\s*=\s*'([^']+)'/)?.[1] ?? "";
   return { html, cookies, csrf, eventTag, eventUrl };
 };
 
@@ -323,23 +439,26 @@ const fetchFightCardComponent = async (
   if (!session.eventTag || !session.csrf) {
     return "";
   }
-  const res = await fetch(new URL("/ajax/get_fight_card_component", PFL_ORIGIN), {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-      "X-CSRF-TOKEN": session.csrf,
-      "X-Requested-With": "XMLHttpRequest",
-      Cookie: session.cookies,
-      Referer: session.eventUrl,
-      Origin: PFL_ORIGIN.replace(/\/$/, ""),
-      Accept: "text/html",
-      "User-Agent": "pfl-cal/1.0",
+  const res = await fetch(
+    new URL("/ajax/get_fight_card_component", PFL_ORIGIN),
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "X-CSRF-TOKEN": session.csrf,
+        "X-Requested-With": "XMLHttpRequest",
+        Cookie: session.cookies,
+        Referer: session.eventUrl,
+        Origin: PFL_ORIGIN.replace(/\/$/, ""),
+        Accept: "text/html",
+        "User-Agent": "pfl-cal/1.0",
+      },
+      body: new URLSearchParams({
+        event_tag: session.eventTag,
+        is_mobile: "0",
+      }).toString(),
     },
-    body: new URLSearchParams({
-      event_tag: session.eventTag,
-      is_mobile: "0",
-    }).toString(),
-  });
+  );
   const text = await res.text();
   if (text.trim().startsWith("{")) {
     return "";
@@ -364,13 +483,13 @@ const getDetailsForListingRow = async (row: ListingRow): Promise<PFLEvent> => {
   } catch {
     return buildPlaceholderEvent(row);
   }
-  let mainUnix =
-    parseGoogleCalendarStartUnix(session.html) ?? listingDerivedMainUnix(row);
-  const title =
-    parseEventPageTitle(session.html)?.trim() || row.title;
+  const parsedGoogleCalendarStart = parseGoogleCalendarStart(session.html);
+  const mainUnix = parsedGoogleCalendarStart?.unix ?? listingDerivedMainUnix(row);
+  const timezone = parsedGoogleCalendarStart?.timezone ?? DEFAULT_EVENT_TIMEZONE;
+  const title = parseEventPageTitle(session.html)?.trim() || row.title;
   const location =
     parseGoogleCalendarLocation(session.html)?.trim() || row.location;
-  const earlyUnix = parseEarlyCardUnix(session.html, mainUnix);
+  const firstCardUnix = parseFirstCardUnix(session.html, mainUnix);
   let fightLines: string[] = [];
   try {
     const fcHtml = await fetchFightCardComponent(session);
@@ -384,12 +503,13 @@ const getDetailsForListingRow = async (row: ListingRow): Promise<PFLEvent> => {
     name: decode(title),
     url: eventUrl,
     date: String(mainUnix),
+    timezone,
     location: decode(location),
     fightCard: fightLines,
     mainCard: [],
     prelims: [],
     earlyPrelims: [],
-    prelimsTime: earlyUnix,
+    prelimsTime: firstCardUnix,
     earlyPrelimsTime: undefined,
   };
 };
@@ -397,5 +517,5 @@ const getDetailsForListingRow = async (row: ListingRow): Promise<PFLEvent> => {
 export async function getAllDetailedEvents(): Promise<PFLEvent[]> {
   const rows = await getUpcomingListingRows();
   const events = await Promise.all(rows.map(getDetailsForListingRow));
-  return events.sort((a, b) => parseInt(a.date, 10) - parseInt(b.date, 10));
+  return events.sort((a, b) => parseInt10(a.date) - parseInt10(b.date));
 }

@@ -3,8 +3,12 @@ import {
   getUpcomingListingRows,
   isNewsletterUrl,
 } from "./scrape.js";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js";
 
 const PREVIEW_BOUTS = 4;
+dayjs.extend(utc);
+const parseInt10 = (value: string): number => Number.parseInt(value, 10);
 
 const logFetch = async (): Promise<void> => {
   const rows = await getUpcomingListingRows();
@@ -12,7 +16,7 @@ const logFetch = async (): Promise<void> => {
   console.log(
     JSON.stringify(
       rows,
-      (_, v) => (v instanceof URL ? v.href : v),
+      (_key, value) => (value instanceof URL ? value.href : value),
       2,
     ),
   );
@@ -20,21 +24,21 @@ const logFetch = async (): Promise<void> => {
   const events = await getAllDetailedEvents();
   console.log(`\nPFLEvent results: ${events.length}\n`);
 
-  for (const e of events) {
+  for (const event of events) {
     const placeholder =
-      isNewsletterUrl(e.url) && Boolean(e.url.hash?.replace(/^#/, ""));
-    const boutCount = e.fightCard.length;
-    const preview = e.fightCard.slice(0, PREVIEW_BOUTS);
-    const start = new Date(parseInt(e.date, 10) * 1000).toISOString();
+      isNewsletterUrl(event.url) && Boolean(event.url.hash?.replace(/^#/, ""));
+    const boutCount = event.fightCard.length;
+    const preview = event.fightCard.slice(0, PREVIEW_BOUTS);
+    const start = dayjs.unix(parseInt10(event.date)).utc().toISOString();
     console.log(
       JSON.stringify(
         {
           placeholder,
-          title: e.name,
-          startUnix: e.date,
+          title: event.name,
+          startUnix: event.date,
           startIsoUtc: start,
-          location: e.location,
-          url: e.url.href,
+          location: event.location,
+          url: event.url.href,
           boutCount,
           boutsPreview: preview,
         },
@@ -46,7 +50,7 @@ const logFetch = async (): Promise<void> => {
   }
 };
 
-logFetch().catch((err) => {
-  console.error(err);
+logFetch().catch((error) => {
+  console.error(error);
   process.exitCode = 1;
 });
