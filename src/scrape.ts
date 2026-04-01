@@ -14,6 +14,7 @@ const PLACEHOLDER_COPY = "More info coming soon";
 const GOOGLE_CALENDAR_HOST = "calendar.google.com";
 const DATE_PARTS_FORMAT = "YYYY-MM-DD HH:mm:ss";
 const GOOGLE_DATE_TOKEN_FORMAT = "YYYYMMDDTHHmmss";
+const DEFAULT_EVENT_TIMEZONE = AMERICA_NEW_YORK;
 
 const parseInt10 = (value: string): number => Number.parseInt(value, 10);
 const unixToEt = (unixSeconds: number) =>
@@ -221,7 +222,12 @@ const parseGoogleCalendarHref = (html: string): URL | null => {
   }
 };
 
-const parseGoogleCalendarStartUnix = (html: string): number | null => {
+interface GoogleCalendarStart {
+  readonly unix: number;
+  readonly timezone: string;
+}
+
+const parseGoogleCalendarStart = (html: string): GoogleCalendarStart | null => {
   const url = parseGoogleCalendarHref(html);
   if (!url || url.hostname !== GOOGLE_CALENDAR_HOST) return null;
   const datesValue = url.searchParams.get("dates");
@@ -230,19 +236,26 @@ const parseGoogleCalendarStartUnix = (html: string): number | null => {
   if (!startToken) return null;
   const startDetails = parseCalendarStartToken(startToken);
   if (!startDetails) return null;
+
+  const calendarTimezone = url.searchParams.get("ctz") ?? DEFAULT_EVENT_TIMEZONE;
   if (startDetails.isUtc) {
-    return unixFromUtcToken(startDetails.dateToken);
+    const unix = unixFromUtcToken(startDetails.dateToken);
+    if (unix === null) return null;
+    return { unix, timezone: calendarTimezone };
   }
-  const calendarTimezone = url.searchParams.get("ctz");
-  if (calendarTimezone) {
-    const unixInCalendarTimezone = unixFromZonedToken(
-      startDetails.dateToken,
-      calendarTimezone,
-    );
-    if (unixInCalendarTimezone !== null) return unixInCalendarTimezone;
+  const unixInCalendarTimezone = unixFromZonedToken(
+    startDetails.dateToken,
+    calendarTimezone,
+  );
+  if (unixInCalendarTimezone !== null) {
+    return { unix: unixInCalendarTimezone, timezone: calendarTimezone };
   }
-  const unixInEt = unixFromZonedToken(startDetails.dateToken, AMERICA_NEW_YORK);
-  return unixInEt;
+  const unixInDefaultTimezone = unixFromZonedToken(
+    startDetails.dateToken,
+    DEFAULT_EVENT_TIMEZONE,
+  );
+  if (unixInDefaultTimezone === null) return null;
+  return { unix: unixInDefaultTimezone, timezone: DEFAULT_EVENT_TIMEZONE };
 };
 
 const parseGoogleCalendarLocation = (html: string): string | null => {
@@ -338,6 +351,7 @@ const buildPlaceholderEvent = (row: ListingRow): PFLEvent => {
     name: decode(row.title.trim()),
     url: newsletterPlaceholderUrl(row),
     date: String(unix),
+    timezone: DEFAULT_EVENT_TIMEZONE,
     location: decode(row.location.trim()),
     fightCard: [PLACEHOLDER_COPY],
     mainCard: [],
@@ -469,8 +483,9 @@ const getDetailsForListingRow = async (row: ListingRow): Promise<PFLEvent> => {
   } catch {
     return buildPlaceholderEvent(row);
   }
-  let mainUnix =
-    parseGoogleCalendarStartUnix(session.html) ?? listingDerivedMainUnix(row);
+  const parsedGoogleCalendarStart = parseGoogleCalendarStart(session.html);
+  const mainUnix = parsedGoogleCalendarStart?.unix ?? listingDerivedMainUnix(row);
+  const timezone = parsedGoogleCalendarStart?.timezone ?? DEFAULT_EVENT_TIMEZONE;
   const title = parseEventPageTitle(session.html)?.trim() || row.title;
   const location =
     parseGoogleCalendarLocation(session.html)?.trim() || row.location;
@@ -488,6 +503,7 @@ const getDetailsForListingRow = async (row: ListingRow): Promise<PFLEvent> => {
     name: decode(title),
     url: eventUrl,
     date: String(mainUnix),
+    timezone,
     location: decode(location),
     fightCard: fightLines,
     mainCard: [],
