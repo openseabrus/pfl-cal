@@ -15,6 +15,48 @@ const wallTimeParts = (unixSec: string): DateArray => {
   return [d.year(), d.month() + 1, d.date(), d.hour(), d.minute()];
 };
 
+const unixFromString = (value: string | undefined): number | undefined => {
+  if (value === undefined) return undefined;
+  const parsed = Number.parseInt(value, 10);
+  if (Number.isNaN(parsed)) return undefined;
+  return parsed;
+};
+
+const eventWindow = (
+  event: PFLEvent,
+): { readonly startUnix: number; readonly durationMinutes: number } => {
+  const mainStartUnix = unixFromString(event.date);
+  const firstCardUnix = unixFromString(event.prelimsTime);
+
+  if (mainStartUnix === undefined && firstCardUnix === undefined) {
+    const fallbackNow = dayjs().unix();
+    return { startUnix: fallbackNow, durationMinutes: 180 };
+  }
+
+  const startUnix =
+    mainStartUnix === undefined
+      ? (firstCardUnix ?? dayjs().unix())
+      : firstCardUnix === undefined
+        ? mainStartUnix
+        : Math.min(mainStartUnix, firstCardUnix);
+
+  const secondStartUnix = mainStartUnix ?? startUnix;
+  const endUnix = secondStartUnix + 3 * 60 * 60;
+  const durationMinutes = Math.max(
+    Math.round((endUnix - startUnix) / 60),
+    180,
+  );
+
+  return { startUnix, durationMinutes };
+};
+
+const durationParts = (
+  totalMinutes: number,
+): { readonly hours: number; readonly minutes: number } => ({
+  hours: Math.floor(totalMinutes / 60),
+  minutes: totalMinutes % 60,
+});
+
 async function createICS(): Promise<void> {
   try {
     const events = await getAllDetailedEvents();
@@ -38,8 +80,9 @@ function formatEventForCalendar(
   event: PFLEvent,
   calName = "PFL",
 ): EventAttributes {
-  const start = wallTimeParts(event.date);
-  const duration: { hours: number } = { hours: 3 };
+  const window = eventWindow(event);
+  const start = wallTimeParts(String(window.startUnix));
+  const duration = durationParts(window.durationMinutes);
   const title = event.name;
   let description = "";
 

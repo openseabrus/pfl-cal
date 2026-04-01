@@ -183,17 +183,20 @@ const parseEventPageTitle = (html: string): string | null => {
   );
 };
 
-const parseEarlyCardUnix = (html: string, mainUnix: number): string | undefined => {
+const parseFirstCardUnix = (
+  html: string,
+  mainUnix: number,
+): string | undefined => {
   const root = parse(html);
   const times = root.querySelectorAll(".event-info-box .event-info-time");
   for (const el of times) {
     const text = el.textContent ?? "";
     const m = text.match(
-      /Early Card:\s*(\d{1,2}):(\d{2})\s*(AM|PM)\s*ET/i,
+      /Early Card:\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\s*ET/i,
     );
-    if (!m?.[1] || !m[2] || !m[3]) continue;
+    if (!m?.[1] || !m[3]) continue;
     let h = parseInt(m[1], 10);
-    const mi = parseInt(m[2], 10);
+    const mi = m[2] ? parseInt(m[2], 10) : 0;
     const ap = m[3];
     h = to24h(h, ap);
     const main = dayjs.unix(mainUnix).tz(AMERICA_NEW_YORK);
@@ -370,7 +373,7 @@ const getDetailsForListingRow = async (row: ListingRow): Promise<PFLEvent> => {
     parseEventPageTitle(session.html)?.trim() || row.title;
   const location =
     parseGoogleCalendarLocation(session.html)?.trim() || row.location;
-  const earlyUnix = parseEarlyCardUnix(session.html, mainUnix);
+  const firstCardUnix = parseFirstCardUnix(session.html, mainUnix);
   let fightLines: string[] = [];
   try {
     const fcHtml = await fetchFightCardComponent(session);
@@ -389,7 +392,7 @@ const getDetailsForListingRow = async (row: ListingRow): Promise<PFLEvent> => {
     mainCard: [],
     prelims: [],
     earlyPrelims: [],
-    prelimsTime: earlyUnix,
+    prelimsTime: firstCardUnix,
     earlyPrelimsTime: undefined,
   };
 };
