@@ -3,19 +3,31 @@ import * as fs from "fs";
 import { createEvents, type DateArray, type EventAttributes } from "ics";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
+import duration from "dayjs/plugin/duration.js";
 
 dayjs.extend(utc);
+dayjs.extend(duration);
+
+const parseInt10 = (value: string): number => Number.parseInt(value, 10);
+const unixUtc = (unixSeconds: number) => dayjs.unix(unixSeconds).utc();
 
 const wallTimeParts = (unixSec: string): DateArray => {
-  const d = dayjs.unix(parseInt(unixSec, 10)).utc();
-  return [d.year(), d.month() + 1, d.date(), d.hour(), d.minute()];
+  const utcDateTime = unixUtc(parseInt10(unixSec));
+  return [
+    utcDateTime.year(),
+    utcDateTime.month() + 1,
+    utcDateTime.date(),
+    utcDateTime.hour(),
+    utcDateTime.minute(),
+  ];
 };
 
 const unixFromString = (value: string | undefined): number | undefined => {
   if (value === undefined) return undefined;
-  const parsed = Number.parseInt(value, 10);
-  if (Number.isNaN(parsed)) return undefined;
-  return parsed;
+  const unixSeconds = Number(value);
+  const parsedUtc = dayjs.unix(unixSeconds).utc();
+  if (!parsedUtc.isValid()) return undefined;
+  return parsedUtc.unix();
 };
 
 const eventWindow = (
@@ -38,20 +50,20 @@ const eventWindow = (
 
   const secondStartUnix = mainStartUnix ?? startUnix;
   const endUnix = secondStartUnix + 3 * 60 * 60;
-  const durationMinutes = Math.max(
-    Math.round((endUnix - startUnix) / 60),
-    180,
-  );
+  const durationMinutes = Math.max(Math.round((endUnix - startUnix) / 60), 180);
 
   return { startUnix, durationMinutes };
 };
 
 const durationParts = (
   totalMinutes: number,
-): { readonly hours: number; readonly minutes: number } => ({
-  hours: Math.floor(totalMinutes / 60),
-  minutes: totalMinutes % 60,
-});
+): { readonly hours: number; readonly minutes: number } => {
+  const eventDuration = dayjs.duration({ minutes: totalMinutes });
+  return {
+    hours: eventDuration.hours() + eventDuration.days() * 24,
+    minutes: eventDuration.minutes(),
+  };
+};
 
 async function createICS(): Promise<void> {
   try {
@@ -76,13 +88,13 @@ function formatEventForCalendar(
   event: PFLEvent,
   calName = "PFL",
 ): EventAttributes {
-  const window = eventWindow(event);
-  const start = wallTimeParts(String(window.startUnix));
-  const duration = durationParts(window.durationMinutes);
+  const eventTiming = eventWindow(event);
+  const start = wallTimeParts(String(eventTiming.startUnix));
+  const duration = durationParts(eventTiming.durationMinutes);
   const title = event.name;
   let description = "";
 
-  const mainStart = dayjs.unix(parseInt(event.date, 10));
+  const mainStart = unixUtc(parseInt10(event.date));
   if (event.fightCard.length) description = `${event.fightCard.join("\n")}\n`;
   if (event.mainCard.length)
     description += `Main Card\n--------------------\n${event.mainCard.join(
@@ -91,7 +103,7 @@ function formatEventForCalendar(
   if (event.prelims.length) {
     description += "\nPrelims";
     if (event.prelimsTime) {
-      const prelimsTime = dayjs.unix(parseInt(event.prelimsTime, 10));
+      const prelimsTime = unixUtc(parseInt10(event.prelimsTime));
       const hoursAgo = mainStart.diff(prelimsTime, "hour", true);
       if (hoursAgo > 0) description += ` (${hoursAgo} hrs before Main)`;
     }
@@ -100,9 +112,7 @@ function formatEventForCalendar(
   if (event.earlyPrelims.length) {
     description += "\nEarly Prelims";
     if (event.earlyPrelimsTime) {
-      const earlyPrelimsTime = dayjs.unix(
-        parseInt(event.earlyPrelimsTime, 10),
-      );
+      const earlyPrelimsTime = unixUtc(parseInt10(event.earlyPrelimsTime));
       const hoursAgo = mainStart.diff(earlyPrelimsTime, "hour", true);
       if (hoursAgo > 0) description += ` (${hoursAgo} hrs before Main)`;
     }
@@ -111,21 +121,16 @@ function formatEventForCalendar(
   if (description.length) description += "\n";
   description += `${event.url}`;
 
-  const dateTimestr = new Date().toLocaleString("en-US", {
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    timeZone: "UTC",
-    timeZoneName: "short",
-  });
-  description += `\n\nAccurate as of ${dateTimestr}`;
+  const generatedAtUtcLabel = dayjs.utc().format("MMM D, h:mm A [UTC]");
+  description += `\n\nAccurate as of ${generatedAtUtcLabel}`;
 
   const location = event.location;
   const uid = event.url.href;
 
   const calendarEvent = {
     start,
+    startInputType: "utc" as const,
+    startOutputType: "utc" as const,
     duration,
     title,
     description,
