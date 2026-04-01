@@ -3,15 +3,11 @@ import * as fs from "fs";
 import { createEvents, type DateArray, type EventAttributes } from "ics";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
-import timezone from "dayjs/plugin/timezone.js";
 
 dayjs.extend(utc);
-dayjs.extend(timezone);
-
-const EVENT_TZ = "America/New_York";
 
 const wallTimeParts = (unixSec: string): DateArray => {
-  const d = dayjs.unix(parseInt(unixSec, 10)).tz(EVENT_TZ);
+  const d = dayjs.unix(parseInt(unixSec, 10)).utc();
   return [d.year(), d.month() + 1, d.date(), d.hour(), d.minute()];
 };
 
@@ -120,7 +116,7 @@ function formatEventForCalendar(
     day: "numeric",
     hour: "numeric",
     minute: "numeric",
-    timeZone: "America/Toronto",
+    timeZone: "UTC",
     timeZoneName: "short",
   });
   description += `\n\nAccurate as of ${dateTimestr}`;
