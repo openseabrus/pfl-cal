@@ -29,17 +29,17 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-africa-pretoria
 SUMMARY:PFL Africa
-DTSTAMP:20260402T052727Z
+DTSTAMP:20260402T084356Z
 DTSTART;TZID=America/New_York:20260410T120000
 DTEND;TZID=America/New_York:20260410T150000
 DESCRIPTION:• Ndebele vs. Clemente @135\n• Clarke vs. Kane @265\n\nhttps://
- pflmma.com/event/pfl-africa-pretoria\n\nAccurate as of Apr 2\, 5:27 AM UTC
+ pflmma.com/event/pfl-africa-pretoria\n\nAccurate as of Apr 2\, 8:43 AM UTC
 LOCATION:SunBet Arena - Pretoria\, South Africa
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-chicago-2026
 SUMMARY:PFL Chicago
-DTSTAMP:20260402T052727Z
+DTSTAMP:20260402T084356Z
 DTSTART;TZID=America/New_York:20260411T180000
 DTEND;TZID=America/New_York:20260412T000000
 DESCRIPTION:• Pettis vs. McKee @135\n• Newman vs. Silveira @185\n• Stots vs
@@ -47,13 +47,13 @@ DESCRIPTION:• Pettis vs. McKee @135\n• Newman vs. Silveira @185\n• Stots v
  op vs. Tsertsvadze @125\n• El Dafrawy vs. Vake @170\n• Watanabe vs. Wisniew
  ska @125\n• Romanov vs. Nascimento @265\n• Ali Walsh vs. Harris @155\n• Ats
  as vs. Jennerman @170\n\nhttps://pflmma.com/event/pfl-chicago-2026\n\nAccur
- ate as of Apr 2\, 5:27 AM UTC
+ ate as of Apr 2\, 8:43 AM UTC
 LOCATION:Wintrust Arena\, Chicago
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-belfast-2026
 SUMMARY:PFL Belfast
-DTSTAMP:20260402T052727Z
+DTSTAMP:20260402T084356Z
 DTSTART;TZID=America/New_York:20260416T143000
 DTEND;TZID=America/New_York:20260416T220000
 DESCRIPTION:• Kelly vs. Wilson @155\n• McKee vs. Lohoré @\n• Yagshimuradov 
@@ -61,41 +61,41 @@ DESCRIPTION:• Kelly vs. Wilson @155\n• McKee vs. Lohoré @\n• Yagshimurado
  aaban vs. Noso Pedro @170\n• Clarke vs. Garnett @135\n• Loughran vs. Philpo
  tt @135\n• TBA vs. Bachar @170\n• Gauci vs. Gittins @135\n• Masoliver vs. M
  ullen @135\n• Hackett vs. Vazquez @125\n\nhttps://pflmma.com/event/pfl-belf
- ast-2026\n\nAccurate as of Apr 2\, 5:27 AM UTC
+ ast-2026\n\nAccurate as of Apr 2\, 8:43 AM UTC
 LOCATION:SSE Arena\, Belfast\, Northern Ireland
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-sioux-falls-2026
 SUMMARY:PFL Sioux Falls
-DTSTAMP:20260402T052727Z
+DTSTAMP:20260402T084356Z
 DTSTART;TZID=America/New_York:20260502T210000
 DTEND;TZID=America/New_York:20260503T000000
 DESCRIPTION:• Storley vs. Zendeli @170\n• Rabadanov vs. Chizov @155\n• Powe
  ll vs. Sordi @205\n• de Sousa vs. Bowers @125\n• Alvarez vs. Logan @155\n• 
  Bye vs. Michels @170\n\nhttps://pflmma.com/event/pfl-sioux-falls-2026\n\nAc
- curate as of Apr 2\, 5:27 AM UTC
+ curate as of Apr 2\, 8:43 AM UTC
 LOCATION:Sanford Pentagon\, Sioux Falls\, South Dakota
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/2026-mena-9
 SUMMARY:PFL MENA 9
-DTSTAMP:20260402T052727Z
+DTSTAMP:20260402T084356Z
 DTSTART;TZID=America/New_York:20260508T210000
 DTEND;TZID=America/New_York:20260509T000000
 DESCRIPTION:https://pflmma.com/event/2026-mena-9\n\nAccurate as of Apr 2\, 
- 5:27 AM UTC
+ 8:43 AM UTC
 LOCATION:KHOBAR\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-brussels-2026
 SUMMARY:PFL Brussels 2026
-DTSTAMP:20260402T052727Z
+DTSTAMP:20260402T084356Z
 DTSTART;TZID=America/New_York:20260523T210000
 DTEND;TZID=America/New_York:20260524T000000
 DESCRIPTION:• Habirora vs. Henderson @170\n• Lapilus vs. Hadley @135\n• Ata
  ngana vs. Gooden @185\n• Alves vs. Inoue @135\n• Adjoudj vs. Sasu @145\n• A
  bena vs. Schilling @205\n• Adiguzel vs. Oliveira @135\n\nhttps://pflmma.com
- /event/pfl-brussels-2026\n\nAccurate as of Apr 2\, 5:27 AM UTC
+ /event/pfl-brussels-2026\n\nAccurate as of Apr 2\, 8:43 AM UTC
 LOCATION:ING Arena\, Brussels\, Belgium
 END:VEVENT
 END:VCALENDAR
