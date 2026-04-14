@@ -29,7 +29,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-belfast-2026
 SUMMARY:PFL Belfast
-DTSTAMP:20260414T165428Z
+DTSTAMP:20260414T204127Z
 DTSTART;TZID=America/New_York:20260416T150000
 DTEND;TZID=America/New_York:20260416T220000
 DESCRIPTION:• Kelly vs. Wilson @155\n• McKee vs. Lohoré @\n• Yagshimuradov 
@@ -37,43 +37,43 @@ DESCRIPTION:• Kelly vs. Wilson @155\n• McKee vs. Lohoré @\n• Yagshimurado
  an vs. Noso Pedro @170\n• Clarke vs. Garnett @135\n• Loughran vs. Philpott 
  @135\n• Martinez vs. Bachar @\n• Gauci vs. Gittins @135\n• Masoliver vs. Mu
  llen @135\n• Hackett vs. Vazquez @125\n\nhttps://pflmma.com/event/pfl-belfa
- st-2026\n\nAccurate as of Apr 14\, 4:54 PM UTC
+ st-2026\n\nAccurate as of Apr 14\, 8:41 PM UTC
 LOCATION:SSE Arena\, Belfast\, Northern Ireland
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-sioux-falls-2026
 SUMMARY:PFL Sioux Falls
-DTSTAMP:20260414T165428Z
+DTSTAMP:20260414T204127Z
 DTSTART;TZID=America/New_York:20260502T210000
 DTEND;TZID=America/New_York:20260503T000000
 DESCRIPTION:• Storley vs. Zendeli @170\n• Rabadanov vs. Chizov @155\n• Powe
  ll vs. Sordi @205\n• Ferreira vs. Bilostenniy @265\n• Magomedov vs. Higo @1
  35\n• de Sousa vs. Bowers @125\n• Santos vs. Yan @125\n• Alvarez vs. Logan 
  @155\n• Bye vs. Michels @170\n\nhttps://pflmma.com/event/pfl-sioux-falls-20
- 26\n\nAccurate as of Apr 14\, 4:54 PM UTC
+ 26\n\nAccurate as of Apr 14\, 8:41 PM UTC
 LOCATION:Sanford Pentagon\, Sioux Falls\, South Dakota
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-brussels-2026
 SUMMARY:PFL Brussels 2026
-DTSTAMP:20260414T165428Z
+DTSTAMP:20260414T204127Z
 DTSTART;TZID=America/New_York:20260523T210000
 DTEND;TZID=America/New_York:20260524T000000
 DESCRIPTION:• Habirora vs. Henderson @170\n• Lapilus vs. Hadley @135\n• Ata
  ngana vs. Gooden @185\n• Alves vs. Inoue @135\n• Adjoudj vs. Sasu @145\n• A
  bena vs. Schilling @205\n• Adiguzel vs. Oliveira @135\n• Ayoub vs. Wilde @1
  55\n• Ibragimov vs. Binate @135\n• Abaev vs. Poclit @170\n\nhttps://pflmma.
- com/event/pfl-brussels-2026\n\nAccurate as of Apr 14\, 4:54 PM UTC
+ com/event/pfl-brussels-2026\n\nAccurate as of Apr 14\, 8:41 PM UTC
 LOCATION:ING Arena\, Brussels\, Belgium
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-africa-nigeria
 SUMMARY:PFL Africa Nigeria
-DTSTAMP:20260414T165428Z
+DTSTAMP:20260414T204127Z
 DTSTART;TZID=America/New_York:20260613T210000
 DTEND;TZID=America/New_York:20260614T000000
 DESCRIPTION:• Adeshina vs. Campos @145\n• Ocheme vs. Ayinda @155\n\nhttps:/
- /pflmma.com/event/pfl-africa-nigeria\n\nAccurate as of Apr 14\, 4:54 PM UTC
+ /pflmma.com/event/pfl-africa-nigeria\n\nAccurate as of Apr 14\, 8:41 PM UTC
 LOCATION:Eko Convention Center\, Lagos\, Nigeria
 END:VEVENT
 END:VCALENDAR
