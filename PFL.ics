@@ -29,37 +29,37 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-sioux-falls-2026
 SUMMARY:PFL Sioux Falls
-DTSTAMP:20260419T162726Z
+DTSTAMP:20260419T202501Z
 DTSTART;TZID=America/New_York:20260502T210000
 DTEND;TZID=America/New_York:20260503T000000
 DESCRIPTION:• Storley vs. Zendeli @170\n• Rabadanov vs. Chizov @155\n• Powe
  ll vs. Sordi @205\n• Ferreira vs. Bilostenniy @265\n• Magomedov vs. Higo @1
  35\n• de Sousa vs. Bowers @125\n• Santos vs. Yan @125\n• Alvarez vs. Logan 
  @155\n• Bye vs. Michels @170\n\nhttps://pflmma.com/event/pfl-sioux-falls-20
- 26\n\nAccurate as of Apr 19\, 4:27 PM UTC
+ 26\n\nAccurate as of Apr 19\, 8:25 PM UTC
 LOCATION:Sanford Pentagon\, Sioux Falls\, South Dakota
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-brussels-2026
 SUMMARY:PFL Brussels 2026
-DTSTAMP:20260419T162726Z
+DTSTAMP:20260419T202501Z
 DTSTART;TZID=America/New_York:20260523T210000
 DTEND;TZID=America/New_York:20260524T000000
 DESCRIPTION:• Habirora vs. Henderson @170\n• Lapilus vs. Hadley @135\n• Ata
  ngana vs. Gooden @185\n• Alves vs. Inoue @135\n• Adjoudj vs. Sasu @145\n• A
  bena vs. Schilling @205\n• Adiguzel vs. Oliveira @135\n• Ayoub vs. Wilde @1
  55\n• Ibragimov vs. Binate @135\n• Abaev vs. Poclit @170\n\nhttps://pflmma.
- com/event/pfl-brussels-2026\n\nAccurate as of Apr 19\, 4:27 PM UTC
+ com/event/pfl-brussels-2026\n\nAccurate as of Apr 19\, 8:25 PM UTC
 LOCATION:ING Arena\, Brussels\, Belgium
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-africa-nigeria
 SUMMARY:PFL Africa Nigeria
-DTSTAMP:20260419T162726Z
+DTSTAMP:20260419T202501Z
 DTSTART;TZID=America/New_York:20260613T210000
 DTEND;TZID=America/New_York:20260614T000000
 DESCRIPTION:• Adeshina vs. Campos @145\n• Ocheme vs. Ayinda @155\n\nhttps:/
- /pflmma.com/event/pfl-africa-nigeria\n\nAccurate as of Apr 19\, 4:27 PM UTC
+ /pflmma.com/event/pfl-africa-nigeria\n\nAccurate as of Apr 19\, 8:25 PM UTC
 LOCATION:Eko Convention Center\, Lagos\, Nigeria
 END:VEVENT
 END:VCALENDAR
