@@ -29,7 +29,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-sioux-falls-2026
 SUMMARY:PFL Sioux Falls
-DTSTAMP:20260501T015417Z
+DTSTAMP:20260501T063034Z
 DTSTART;TZID=America/New_York:20260502T190000
 DTEND;TZID=America/New_York:20260503T010000
 DESCRIPTION:• Storley vs. Zendeli @170\n• Rabadanov vs. Chizov @155\n• Powe
@@ -37,13 +37,13 @@ DESCRIPTION:• Storley vs. Zendeli @170\n• Rabadanov vs. Chizov @155\n• Pow
  35\n• Magomedov vs. Xavier @205\n• de Sousa vs. Bowers @125\n• Saúl Marroqu
  ín vs. Won Kim @145\n• Santos vs. Yan @125\n• Alvarez vs. Logan @155\n• Bye
   vs. Michels @170\n• Djantou Nana vs. Williams @265\n\nhttps://pflmma.com/e
- vent/pfl-sioux-falls-2026\n\nAccurate as of May 1\, 1:54 AM UTC
+ vent/pfl-sioux-falls-2026\n\nAccurate as of May 1\, 6:30 AM UTC
 LOCATION:Sanford Pentagon\, Sioux Falls\, South Dakota
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-brussels-2026
 SUMMARY:PFL Brussels 2026
-DTSTAMP:20260501T015417Z
+DTSTAMP:20260501T063034Z
 DTSTART;TZID=America/New_York:20260523T210000
 DTEND;TZID=America/New_York:20260524T000000
 DESCRIPTION:• Habirora vs. Henderson @170\n• Lapilus vs. Hadley @135\n• Ata
@@ -51,40 +51,40 @@ DESCRIPTION:• Habirora vs. Henderson @170\n• Lapilus vs. Hadley @135\n• At
  diguzel vs. Oliveira @135\n• Abena vs. Schilling @205\n• Ayoub vs. Wilde @1
  55\n• Ibragimov vs. Binate @135\n• Abaev vs. Poclit @170\n• Meskini vs. Lop
  es @145\n• Serbiev vs. Reece @170\n\nhttps://pflmma.com/event/pfl-brussels-
- 2026\n\nAccurate as of May 1\, 1:54 AM UTC
+ 2026\n\nAccurate as of May 1\, 6:30 AM UTC
 LOCATION:ING Arena\, Brussels\, Belgium
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena-9
 SUMMARY:PFL MENA 9
-DTSTAMP:20260501T015417Z
+DTSTAMP:20260501T063034Z
 DTSTART;TZID=America/New_York:20260524T210000
 DTEND;TZID=America/New_York:20260525T000000
 DESCRIPTION:• Yahya vs. Saadi @145\n• Hamli vs. Djiroun @155\n• Kooheji vs.
   Bendaoud @145\n• Fahmi vs. Ghanem @155\n• El Sisy vs. Karim @155\n• Eid vs
  . Fakher @155\n• Saleem vs. Shalaan @155\n• Marhoon vs. Qasmieh @125\n• Alb
  rahim vs. Mahmoud @170\n\nhttps://pflmma.com/event/pflmena-9\n\nAccurate as
-  of May 1\, 1:54 AM UTC
+  of May 1\, 6:30 AM UTC
 LOCATION:Dubai\, United Arab Emirates
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-africa-nigeria
 SUMMARY:PFL Africa Nigeria
-DTSTAMP:20260501T015417Z
+DTSTAMP:20260501T063034Z
 DTSTART;TZID=America/New_York:20260613T210000
 DTEND;TZID=America/New_York:20260614T000000
 DESCRIPTION:• Adeshina vs. Campos @145\n• Ocheme vs. Ayinda @155\n\nhttps:/
- /pflmma.com/event/pfl-africa-nigeria\n\nAccurate as of May 1\, 1:54 AM UTC
+ /pflmma.com/event/pfl-africa-nigeria\n\nAccurate as of May 1\, 6:30 AM UTC
 LOCATION:Eko Convention Center\, Lagos\, Nigeria
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-san-diego-2026
 SUMMARY:PFL San Diego
-DTSTAMP:20260501T015418Z
+DTSTAMP:20260501T063034Z
 DTSTART;TZID=America/New_York:20260627T190000
 DTEND;TZID=America/New_York:20260628T010000
 DESCRIPTION:• McKee vs. Isbulaev @145\n• Carmouche vs. Araujo @125\n\nhttps
- ://pflmma.com/event/pfl-san-diego-2026\n\nAccurate as of May 1\, 1:54 AM UT
+ ://pflmma.com/event/pfl-san-diego-2026\n\nAccurate as of May 1\, 6:30 AM UT
  C
 LOCATION:Pechanga Arena San Diego – San Diego\, Calif.
 END:VEVENT
