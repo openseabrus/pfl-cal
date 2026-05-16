@@ -29,7 +29,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-brussels-2026
 SUMMARY:PFL Brussels 2026
-DTSTAMP:20260516T061436Z
+DTSTAMP:20260516T091954Z
 DTSTART;TZID=America/New_York:20260523T150000
 DTEND;TZID=America/New_York:20260523T180000
 DESCRIPTION:• Habirora vs. Henderson @170\n• Lapilus vs. Hadley @135\n• Ata
@@ -37,74 +37,74 @@ DESCRIPTION:• Habirora vs. Henderson @170\n• Lapilus vs. Hadley @135\n• At
  diguzel vs. Oliveira @135\n• Abena vs. Schilling @205\n• Ibragimov vs. Bina
  te @135\n• Abaev vs. Poclit @170\n• Meskini vs. Lopes @145\n• Serbiev vs. R
  eece @170\n\nhttps://pflmma.com/event/pfl-brussels-2026\n\nAccurate as of M
- ay 16\, 6:14 AM UTC
+ ay 16\, 9:19 AM UTC
 LOCATION:ING Arena\, Brussels\, Belgium
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena-9
 SUMMARY:PFL MENA 9
-DTSTAMP:20260516T061436Z
+DTSTAMP:20260516T091954Z
 DTSTART;TZID=America/New_York:20260524T210000
 DTEND;TZID=America/New_York:20260525T000000
 DESCRIPTION:• Yahya vs. Saadi @145\n• Hamli vs. Djiroun @155\n• Kooheji vs.
   Bendaoud @145\n• Al-Hammadi vs. Mansour @115\n• Fahmi vs. Ghanem @155\n• E
  l Sisy vs. Karim @155\n• Eid vs. Fakher @155\n• Saleem vs. Shalaan @155\n• 
  Marhoon vs. Qasmieh @125\n• Albrahim vs. Mahmoud @170\n• Alameri vs. Osman 
- @145\n\nhttps://pflmma.com/event/pflmena-9\n\nAccurate as of May 16\, 6:14 
+ @145\n\nhttps://pflmma.com/event/pflmena-9\n\nAccurate as of May 16\, 9:19 
  AM UTC
 LOCATION:Dubai\, United Arab Emirates
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-africa-nigeria
 SUMMARY:PFL Africa Nigeria
-DTSTAMP:20260516T061436Z
+DTSTAMP:20260516T091954Z
 DTSTART;TZID=America/New_York:20260613T210000
 DTEND;TZID=America/New_York:20260614T000000
 DESCRIPTION:• Adeshina vs. Campos @145\n• Ocheme vs. Ayinda @155\n• Chipito
   vs. Ahmed @115\n\nhttps://pflmma.com/event/pfl-africa-nigeria\n\nAccurate 
- as of May 16\, 6:14 AM UTC
+ as of May 16\, 9:19 AM UTC
 LOCATION:Eko Convention Center\, Lagos\, Nigeria
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/newsletter#pfl-mena-10-fri-jun-19
 SUMMARY:PFL MENA 10
-DTSTAMP:20260516T061436Z
+DTSTAMP:20260516T091954Z
 DTSTART;TZID=America/New_York:20260619T210000
 DTEND;TZID=America/New_York:20260620T000000
 DESCRIPTION:More info coming soon\n\nhttps://pflmma.com/newsletter#pfl-mena
- -10-fri-jun-19\n\nAccurate as of May 16\, 6:14 AM UTC
+ -10-fri-jun-19\n\nAccurate as of May 16\, 9:19 AM UTC
 LOCATION:Jeddah\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-san-diego-2026
 SUMMARY:PFL San Diego
-DTSTAMP:20260516T061436Z
+DTSTAMP:20260516T091954Z
 DTSTART;TZID=America/New_York:20260627T220000
 DTEND;TZID=America/New_York:20260628T010000
 DESCRIPTION:• McKee vs. Isbulaev @145\n• Carmouche vs. Araujo @125\n• Shabl
  iy vs. Davis @155\n• Bably vs. Wilkinson @205\n• Magomedsharipov vs. Saúl M
  arroquín @145\n• Lipski da Silva vs. Bishop @125\n\nhttps://pflmma.com/even
- t/pfl-san-diego-2026\n\nAccurate as of May 16\, 6:14 AM UTC
+ t/pfl-san-diego-2026\n\nAccurate as of May 16\, 9:19 AM UTC
 LOCATION:Pechanga Arena San Diego – San Diego\, Calif.
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-austin-2026
 SUMMARY:PFL AUSTIN 2026
-DTSTAMP:20260516T061436Z
+DTSTAMP:20260516T091954Z
 DTSTART;TZID=America/New_York:20260718T200000
 DTEND;TZID=America/New_York:20260718T230000
 DESCRIPTION:• van Steenis vs. Eblen @185\n\nhttps://pflmma.com/event/pfl-au
- stin-2026\n\nAccurate as of May 16\, 6:14 AM UTC
+ stin-2026\n\nAccurate as of May 16\, 9:19 AM UTC
 LOCATION:Moody Center - Austin\, Texas
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-washington-dc-2026
 SUMMARY:PFL Washington DC
-DTSTAMP:20260516T061436Z
+DTSTAMP:20260516T091954Z
 DTSTART;TZID=America/New_York:20260725T220000
 DTEND;TZID=America/New_York:20260726T010000
 DESCRIPTION:• Jean vs. Musaev @170\n• Carlos Jr. vs. Trainer @205\n\nhttps:
- //pflmma.com/event/pfl-washington-dc-2026\n\nAccurate as of May 16\, 6:14 A
+ //pflmma.com/event/pfl-washington-dc-2026\n\nAccurate as of May 16\, 9:19 A
  M UTC
 LOCATION:Washington D.C.
 END:VEVENT
