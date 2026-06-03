@@ -29,72 +29,72 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-africa-nigeria
 SUMMARY:PFL Africa Nigeria
-DTSTAMP:20260603T161351Z
+DTSTAMP:20260603T222215Z
 DTSTART;TZID=America/New_York:20260613T210000
 DTEND;TZID=America/New_York:20260614T000000
 DESCRIPTION:• Adeshina vs. Campos @145\n• Ocheme vs. Ayinda @155\n• Chipito
   vs. Ahmed @115\n\nhttps://pflmma.com/event/pfl-africa-nigeria\n\nAccurate 
- as of Jun 3\, 4:13 PM UTC
+ as of Jun 3\, 10:22 PM UTC
 LOCATION:Eko Convention Center\, Lagos\, Nigeria
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena10
 SUMMARY:PFL MENA 10
-DTSTAMP:20260603T161351Z
+DTSTAMP:20260603T222215Z
 DTSTART;TZID=America/New_York:20260619T210000
 DTEND;TZID=America/New_York:20260620T000000
 DESCRIPTION:• Alsaif vs. Ouhachi @\n• Basahel vs. El Azami @125\n• El Hazou
  me vs. Tarek @145\n• Boudegzdame vs. Salem @145\n• Diani vs. Adel @170\n• H
  ussein vs. Darwish @170\n• Akhmouch vs. Zouad @170\n• Shaaban vs. Kayyali @
- 170\n\nhttps://pflmma.com/event/pflmena10\n\nAccurate as of Jun 3\, 4:13 PM
-  UTC
+ 170\n\nhttps://pflmma.com/event/pflmena10\n\nAccurate as of Jun 3\, 10:22 P
+ M UTC
 LOCATION:Jeddah\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-san-diego-2026
 SUMMARY:PFL San Diego
-DTSTAMP:20260603T161351Z
+DTSTAMP:20260603T222215Z
 DTSTART;TZID=America/New_York:20260627T220000
 DTEND;TZID=America/New_York:20260628T010000
 DESCRIPTION:• McKee vs. Isbulaev @145\n• Carmouche vs. Araujo @125\n• Shabl
  iy vs. Davis @155\n• Bably vs. Wilkinson @205\n• Magomedsharipov vs. Weems 
  @145\n• Lipski da Silva vs. Bishop @125\n• Wetzell vs. Khamidov @135\n• Khi
  zriev vs. Parente @155\n• Clark vs. Joanne @125\n• Fehr vs. Bzdigian @135\n
- \nhttps://pflmma.com/event/pfl-san-diego-2026\n\nAccurate as of Jun 3\, 4:1
- 3 PM UTC
+ \nhttps://pflmma.com/event/pfl-san-diego-2026\n\nAccurate as of Jun 3\, 10:
+ 22 PM UTC
 LOCATION:Pechanga Arena San Diego – San Diego\, Calif.
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-austin-2026
 SUMMARY:PFL AUSTIN 2026
-DTSTAMP:20260603T161351Z
+DTSTAMP:20260603T222215Z
 DTSTART;TZID=America/New_York:20260718T200000
 DTEND;TZID=America/New_York:20260718T230000
 DESCRIPTION:• van Steenis vs. Eblen @185\n• Pettis vs. McGrillen @135\n• Co
  ssio vs. Englund @155\n\nhttps://pflmma.com/event/pfl-austin-2026\n\nAccura
- te as of Jun 3\, 4:13 PM UTC
+ te as of Jun 3\, 10:22 PM UTC
 LOCATION:Moody Center - Austin\, Texas
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-washington-dc-2026
 SUMMARY:PFL Washington DC
-DTSTAMP:20260603T161351Z
+DTSTAMP:20260603T222215Z
 DTSTART;TZID=America/New_York:20260725T220000
 DTEND;TZID=America/New_York:20260726T010000
 DESCRIPTION:• Jean vs. Musaev @170\n• Umalatov vs. Rodriguez @170\n\nhttps:
- //pflmma.com/event/pfl-washington-dc-2026\n\nAccurate as of Jun 3\, 4:13 PM
-  UTC
+ //pflmma.com/event/pfl-washington-dc-2026\n\nAccurate as of Jun 3\, 10:22 P
+ M UTC
 LOCATION:Washington D.C.
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-ny-2026
 SUMMARY:PFL NEW YORK
-DTSTAMP:20260603T161351Z
+DTSTAMP:20260603T222215Z
 DTSTART;TZID=America/New_York:20260731T190000
 DTEND;TZID=America/New_York:20260731T220000
 DESCRIPTION:• Nurmagomedov vs. Colgan @155\n• Ditcheva vs. Kielholtz @125\n
- \nhttps://pflmma.com/event/pfl-ny-2026\n\nAccurate as of Jun 3\, 4:13 PM UT
- C
+ \nhttps://pflmma.com/event/pfl-ny-2026\n\nAccurate as of Jun 3\, 10:22 PM U
+ TC
 LOCATION:UBS Arena\, Belmont Park\, New York
 END:VEVENT
 END:VCALENDAR
