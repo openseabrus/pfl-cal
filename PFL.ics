@@ -29,59 +29,59 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-san-diego-2026
 SUMMARY:PFL San Diego
-DTSTAMP:20260620T102432Z
+DTSTAMP:20260620T132420Z
 DTSTART;TZID=America/New_York:20260627T220000
 DTEND;TZID=America/New_York:20260628T010000
 DESCRIPTION:• McKee vs. Isbulaev @145\n• Carmouche vs. Araujo @125\n• Shabl
  iy vs. Davis @155\n• Bably vs. Wilkinson @205\n• Magomedsharipov vs. Weems 
  @145\n• Lipski da Silva vs. Bishop @125\n• Wetzell vs. Khamidov @135\n• Khi
  zriev vs. Parente @155\n• Clark vs. Joanne @125\n• Fehr vs. Bzdigian @135\n
- \nhttps://pflmma.com/event/pfl-san-diego-2026\n\nAccurate as of Jun 20\, 10
- :24 AM UTC
+ \nhttps://pflmma.com/event/pfl-san-diego-2026\n\nAccurate as of Jun 20\, 1:
+ 24 PM UTC
 LOCATION:Pechanga Arena San Diego – San Diego\, Calif.
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-austin-2026
 SUMMARY:PFL AUSTIN 2026
-DTSTAMP:20260620T102432Z
+DTSTAMP:20260620T132420Z
 DTSTART;TZID=America/New_York:20260718T200000
 DTEND;TZID=America/New_York:20260718T230000
 DESCRIPTION:• Eblen vs. Kasanganay @185\n• Pettis vs. McGrillen @135\n• Lou
  ghran vs. Arce @145\n• Pinedo vs. Saúl Marroquín @145\n• Vazquez vs. Savich
  eva @125\n• Cossio vs. Englund @155\n• Ali Walsh vs. Khizriev @155\n\nhttps
- ://pflmma.com/event/pfl-austin-2026\n\nAccurate as of Jun 20\, 10:24 AM UTC
+ ://pflmma.com/event/pfl-austin-2026\n\nAccurate as of Jun 20\, 1:24 PM UTC
 LOCATION:Moody Center - Austin\, Texas
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-washington-dc-2026
 SUMMARY:PFL Washington DC
-DTSTAMP:20260620T102432Z
+DTSTAMP:20260620T132420Z
 DTSTART;TZID=America/New_York:20260725T220000
 DTEND;TZID=America/New_York:20260726T010000
 DESCRIPTION:• Jean vs. Musaev @170\n• Umalatov vs. Rodriguez @170\n• Pedro 
  vs. Xavier @205\n\nhttps://pflmma.com/event/pfl-washington-dc-2026\n\nAccur
- ate as of Jun 20\, 10:24 AM UTC
+ ate as of Jun 20\, 1:24 PM UTC
 LOCATION:CareFirst Arena\, Washington D.C.
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-ny-2026
 SUMMARY:PFL NEW YORK
-DTSTAMP:20260620T102432Z
+DTSTAMP:20260620T132420Z
 DTSTART;TZID=America/New_York:20260731T190000
 DTEND;TZID=America/New_York:20260731T220000
 DESCRIPTION:• Nurmagomedov vs. Colgan @155\n• Ditcheva vs. Kielholtz @125\n
  • Magomedov vs. Alvarez @155\n• De La Rosa vs. Postarnakova @125\n\nhttps:/
- /pflmma.com/event/pfl-ny-2026\n\nAccurate as of Jun 20\, 10:24 AM UTC
+ /pflmma.com/event/pfl-ny-2026\n\nAccurate as of Jun 20\, 1:24 PM UTC
 LOCATION:UBS Arena\, Belmont Park\, New York
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-charlotte
 SUMMARY:PFL Charlotte
-DTSTAMP:20260620T102432Z
+DTSTAMP:20260620T132420Z
 DTSTART;TZID=America/New_York:20260807T220000
 DTEND;TZID=America/New_York:20260808T010000
 DESCRIPTION:• Battle vs. Rosta @185\n\nhttps://pflmma.com/event/pfl-charlot
- te\n\nAccurate as of Jun 20\, 10:24 AM UTC
+ te\n\nAccurate as of Jun 20\, 1:24 PM UTC
 LOCATION:Bojangles Coliseum\, Charlotte\, North Carolina
 END:VEVENT
 END:VCALENDAR
