@@ -29,34 +29,34 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena10
 SUMMARY:PFL MENA 10
-DTSTAMP:20260705T015500Z
+DTSTAMP:20260705T065817Z
 DTSTART;TZID=America/New_York:20260710T210000
 DTEND;TZID=America/New_York:20260711T000000
 DESCRIPTION:• Alsaif vs. Ouhachi @\n• Shaaban vs. Kayyali @170\n• Basahel v
  s. El Azami @125\n• Diani vs. Adel @170\n• Kabbani vs. Tarek @145\n• Akhmou
  ch vs. Zouad @170\n• Boudegzdame vs. Salem @145\n• Hussein vs. Darwish @170
  \n• Atmani vs. Mostafa @170\n• Almolhem vs. Elhoufy @145\n\nhttps://pflmma.
- com/event/pflmena10\n\nAccurate as of Jul 5\, 1:55 AM UTC
+ com/event/pflmena10\n\nAccurate as of Jul 5\, 6:58 AM UTC
 LOCATION:Riyadh\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-austin-2026
 SUMMARY:PFL AUSTIN 2026
-DTSTAMP:20260705T015500Z
+DTSTAMP:20260705T065817Z
 DTSTART;TZID=America/New_York:20260718T200000
 DTEND;TZID=America/New_York:20260718T230000
 DESCRIPTION:• Eblen vs. Kasanganay @185\n• Pettis vs. McGrillen @135\n• Lou
  ghran vs. Arce @145\n• Pinedo vs. Saúl Marroquín @145\n• Vazquez vs. Savich
  eva @125\n• Cossio vs. Englund @155\n• Ali Walsh vs. Khizriev @155\n• Grawe
   vs. Thiner @125\n• Glass vs. Flessas @145\n• Alba vs. Tsertsvadze @125\n\n
- https://pflmma.com/event/pfl-austin-2026\n\nAccurate as of Jul 5\, 1:55 AM 
+ https://pflmma.com/event/pfl-austin-2026\n\nAccurate as of Jul 5\, 6:58 AM 
  UTC
 LOCATION:Moody Center - Austin\, Texas
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-washington-dc-2026
 SUMMARY:PFL Washington DC
-DTSTAMP:20260705T015500Z
+DTSTAMP:20260705T065817Z
 DTSTART;TZID=America/New_York:20260725T220000
 DTEND;TZID=America/New_York:20260726T010000
 DESCRIPTION:• Jean vs. Musaev @170\n• Umalatov vs. Rodriguez @170\n• Meredi
@@ -64,50 +64,50 @@ DESCRIPTION:• Jean vs. Musaev @170\n• Umalatov vs. Rodriguez @170\n• Mered
  @265\n• Pedro vs. Xavier @205\n• Moldavsky vs. Cappelozza @205\n• Gutierrez
   vs. Ndebele @135\n• Kubanza vs. Mixan @170\n• Yard vs. Bradford @205\n• He
  rmosillo vs. Pais @145\n\nhttps://pflmma.com/event/pfl-washington-dc-2026\n
- \nAccurate as of Jul 5\, 1:55 AM UTC
+ \nAccurate as of Jul 5\, 6:58 AM UTC
 LOCATION:CareFirst Arena\, Washington D.C.
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-ny-2026
 SUMMARY:PFL NEW YORK
-DTSTAMP:20260705T015500Z
+DTSTAMP:20260705T065817Z
 DTSTART;TZID=America/New_York:20260731T190000
 DTEND;TZID=America/New_York:20260731T220000
 DESCRIPTION:• Nurmagomedov vs. Colgan @155\n• Ditcheva vs. Kielholtz @125\n
  • Yagshimuradov vs. Powell @205\n• Magomedov vs. Alvarez @155\n• Stots vs. 
  Dayron @135\n• Martinez vs. El Dafrawy @170\n• De La Rosa vs. Postarnakova 
- @125\n\nhttps://pflmma.com/event/pfl-ny-2026\n\nAccurate as of Jul 5\, 1:55
+ @125\n\nhttps://pflmma.com/event/pfl-ny-2026\n\nAccurate as of Jul 5\, 6:58
   AM UTC
 LOCATION:UBS Arena\, Belmont Park\, New York
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-charlotte
 SUMMARY:PFL Charlotte
-DTSTAMP:20260705T015500Z
+DTSTAMP:20260705T065817Z
 DTSTART;TZID=America/New_York:20260807T220000
 DTEND;TZID=America/New_York:20260808T010000
 DESCRIPTION:• Battle vs. Rosta @185\n• Wilson vs. Ayoub @155\n\nhttps://pfl
- mma.com/event/pfl-charlotte\n\nAccurate as of Jul 5\, 1:55 AM UTC
+ mma.com/event/pfl-charlotte\n\nAccurate as of Jul 5\, 6:58 AM UTC
 LOCATION:Bojangles Coliseum\, Charlotte\, North Carolina
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-tampa
 SUMMARY:PFL Tampa
-DTSTAMP:20260705T015500Z
+DTSTAMP:20260705T065817Z
 DTSTART;TZID=America/New_York:20260822T220000
 DTEND;TZID=America/New_York:20260823T010000
 DESCRIPTION:• Cyborg vs. Vieira @145\n\nhttps://pflmma.com/event/pfl-tampa\
- n\nAccurate as of Jul 5\, 1:55 AM UTC
+ n\nAccurate as of Jul 5\, 6:58 AM UTC
 LOCATION:Benchmark International Arena\, Tampa\, FL
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/newsletter#pfl-africa-morocco-sat-oct-10
 SUMMARY:PFL Africa Morocco
-DTSTAMP:20260705T015500Z
+DTSTAMP:20260705T065817Z
 DTSTART;TZID=America/New_York:20261010T210000
 DTEND;TZID=America/New_York:20261011T000000
 DESCRIPTION:More info coming soon\n\nhttps://pflmma.com/newsletter#pfl-afri
- ca-morocco-sat-oct-10\n\nAccurate as of Jul 5\, 1:55 AM UTC
+ ca-morocco-sat-oct-10\n\nAccurate as of Jul 5\, 6:58 AM UTC
 LOCATION:CASABLANCA
 END:VEVENT
 END:VCALENDAR
