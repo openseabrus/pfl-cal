@@ -29,20 +29,20 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-washington-dc-2026
 SUMMARY:PFL Washington DC
-DTSTAMP:20260723T100933Z
+DTSTAMP:20260723T132049Z
 DTSTART;TZID=America/New_York:20260725T220000
 DTEND;TZID=America/New_York:20260726T010000
 DESCRIPTION:• Jean vs. Musaev @170\n• Pedro vs. Xavier @205\n• Cauley vs. M
  agomedov @205\n• Kubanza vs. Mixan @170\n• Meredith vs. Cyr @\n• Ndebele vs
  . Davis @\n• Rodriguez vs. McKenzie @170\n• Yard vs. Bradford @205\n• Hermo
  sillo vs. Pais @145\n\nhttps://pflmma.com/event/pfl-washington-dc-2026\n\nA
- ccurate as of Jul 23\, 10:09 AM UTC
+ ccurate as of Jul 23\, 1:20 PM UTC
 LOCATION:CareFirst Arena\, Washington D.C.
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-ny-2026
 SUMMARY:PFL NEW YORK
-DTSTAMP:20260723T100933Z
+DTSTAMP:20260723T132049Z
 DTSTART;TZID=America/New_York:20260731T190000
 DTEND;TZID=America/New_York:20260731T220000
 DESCRIPTION:• Nurmagomedov vs. Colgan @155\n• Ditcheva vs. Kielholtz @125\n
@@ -50,53 +50,53 @@ DESCRIPTION:• Nurmagomedov vs. Colgan @155\n• Ditcheva vs. Kielholtz @125\n
  Dayron @135\n• Martinez vs. El Dafrawy @170\n• Gauci vs. Begosso @135\n• Di
  akhaté vs. Nishimwe @205\n• Nabiev vs. Jones @205\n• De La Rosa vs. Postarn
  akova @125\n\nhttps://pflmma.com/event/pfl-ny-2026\n\nAccurate as of Jul 23
- \, 10:09 AM UTC
+ \, 1:20 PM UTC
 LOCATION:UBS Arena\, Belmont Park\, New York
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-charlotte
 SUMMARY:PFL Charlotte
-DTSTAMP:20260723T100933Z
+DTSTAMP:20260723T132049Z
 DTSTART;TZID=America/New_York:20260807T220000
 DTEND;TZID=America/New_York:20260808T010000
 DESCRIPTION:• Battle vs. Rosta @185\n• Silveira vs. Jeffery @185\n• Fremd v
  s. Gregory @185\n• Goltsov vs. Mezhiev @265\n• Leialoha vs. Ring @145\n• Bo
  wers vs. Dana @125\n• Martin vs. Lopshire @\n• Neves vs. Djantou Nana @265\
  n• Carson vs. Waters @170\n\nhttps://pflmma.com/event/pfl-charlotte\n\nAccu
- rate as of Jul 23\, 10:09 AM UTC
+ rate as of Jul 23\, 1:20 PM UTC
 LOCATION:Bojangles Coliseum\, Charlotte\, North Carolina
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-tampa
 SUMMARY:PFL Tampa
-DTSTAMP:20260723T100933Z
+DTSTAMP:20260723T132049Z
 DTSTART;TZID=America/New_York:20260822T220000
 DTEND;TZID=America/New_York:20260823T010000
 DESCRIPTION:• Cyborg vs. Vieira @145\n• Rabadanov vs. Kaszuba @155\n• Olive
  ira vs. Alves @135\n• Trainer vs. Dunlap @205\n• Magomedov vs. Marcos @135\
  n• Santos vs. de Sousa @125\n• Ibragimov vs. Basharat @135\n• Bush vs. Akht
  amov @155\n\nhttps://pflmma.com/event/pfl-tampa\n\nAccurate as of Jul 23\, 
- 10:09 AM UTC
+ 1:20 PM UTC
 LOCATION:Benchmark International Arena\, Tampa\, FL
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena11
 SUMMARY:PFL MENA 11
-DTSTAMP:20260723T100933Z
+DTSTAMP:20260723T132049Z
 DTSTART;TZID=America/New_York:20261002T210000
 DTEND;TZID=America/New_York:20261003T000000
 DESCRIPTION:https://pflmma.com/event/pflmena11\n\nAccurate as of Jul 23\, 1
- 0:09 AM UTC
+ :20 PM UTC
 LOCATION:Riyadh\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/newsletter#pfl-africa-morocco-sat-oct-10
 SUMMARY:PFL Africa Morocco
-DTSTAMP:20260723T100933Z
+DTSTAMP:20260723T132049Z
 DTSTART;TZID=America/New_York:20261010T210000
 DTEND;TZID=America/New_York:20261011T000000
 DESCRIPTION:More info coming soon\n\nhttps://pflmma.com/newsletter#pfl-afri
- ca-morocco-sat-oct-10\n\nAccurate as of Jul 23\, 10:09 AM UTC
+ ca-morocco-sat-oct-10\n\nAccurate as of Jul 23\, 1:20 PM UTC
 LOCATION:CASABLANCA
 END:VEVENT
 END:VCALENDAR
