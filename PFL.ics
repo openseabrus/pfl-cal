@@ -29,7 +29,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-charlotte
 SUMMARY:PFL Charlotte
-DTSTAMP:20260802T014211Z
+DTSTAMP:20260802T062455Z
 DTSTART;TZID=America/New_York:20260807T220000
 DTEND;TZID=America/New_York:20260808T010000
 DESCRIPTION:• Battle vs. Rosta @185\n• Silveira vs. Jeffery @185\n• Fremd v
@@ -37,13 +37,13 @@ DESCRIPTION:• Battle vs. Rosta @185\n• Silveira vs. Jeffery @185\n• Fremd 
  Leialoha vs. Ring @145\n• Bowers vs. Dana @125\n• Boylan vs. Ward @155\n• M
  oldavsky vs. Cappelozza @205\n• Martin vs. Lopshire @\n• Neves vs. Djantou 
  Nana @265\n• Carson vs. Waters @170\n\nhttps://pflmma.com/event/pfl-charlot
- te\n\nAccurate as of Aug 2\, 1:42 AM UTC
+ te\n\nAccurate as of Aug 2\, 6:24 AM UTC
 LOCATION:Bojangles Coliseum\, Charlotte\, North Carolina
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-tampa
 SUMMARY:PFL Tampa
-DTSTAMP:20260802T014211Z
+DTSTAMP:20260802T062455Z
 DTSTART;TZID=America/New_York:20260822T220000
 DTEND;TZID=America/New_York:20260823T010000
 DESCRIPTION:• Cyborg vs. Vieira @145\n• Rabadanov vs. Kaszuba @155\n• Olive
@@ -51,27 +51,27 @@ DESCRIPTION:• Cyborg vs. Vieira @145\n• Rabadanov vs. Kaszuba @155\n• Oliv
  n• Santos vs. de Sousa @125\n• Ibragimov vs. Basharat @135\n• Bush vs. Akht
  amov @155\n• Schulte vs. Zaynukov @155\n• Van Steenis vs. Watley @155\n• Sh
  eridan vs. Vake @170\n\nhttps://pflmma.com/event/pfl-tampa\n\nAccurate as o
- f Aug 2\, 1:42 AM UTC
+ f Aug 2\, 6:24 AM UTC
 LOCATION:Benchmark International Arena\, Tampa\, FL
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena11
 SUMMARY:PFL MENA 11
-DTSTAMP:20260802T014211Z
+DTSTAMP:20260802T062455Z
 DTSTART;TZID=America/New_York:20261002T210000
 DTEND;TZID=America/New_York:20261003T000000
-DESCRIPTION:https://pflmma.com/event/pflmena11\n\nAccurate as of Aug 2\, 1:
- 42 AM UTC
+DESCRIPTION:https://pflmma.com/event/pflmena11\n\nAccurate as of Aug 2\, 6:
+ 24 AM UTC
 LOCATION:Riyadh\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/newsletter#pfl-africa-morocco-sat-oct-10
 SUMMARY:PFL Africa Morocco
-DTSTAMP:20260802T014211Z
+DTSTAMP:20260802T062455Z
 DTSTART;TZID=America/New_York:20261010T210000
 DTEND;TZID=America/New_York:20261011T000000
 DESCRIPTION:More info coming soon\n\nhttps://pflmma.com/newsletter#pfl-afri
- ca-morocco-sat-oct-10\n\nAccurate as of Aug 2\, 1:42 AM UTC
+ ca-morocco-sat-oct-10\n\nAccurate as of Aug 2\, 6:24 AM UTC
 LOCATION:CASABLANCA
 END:VEVENT
 END:VCALENDAR
