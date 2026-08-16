@@ -29,7 +29,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-tampa
 SUMMARY:PFL Tampa
-DTSTAMP:20260815T200953Z
+DTSTAMP:20260816T003545Z
 DTSTART;TZID=America/New_York:20260822T210000
 DTEND;TZID=America/New_York:20260823T000000
 DESCRIPTION:• Cyborg vs. Vieira @145\n• Rabadanov vs. Reeder @155\n• Olivei
@@ -37,27 +37,27 @@ DESCRIPTION:• Cyborg vs. Vieira @145\n• Rabadanov vs. Reeder @155\n• Olive
  • Santos vs. de Sousa @125\n• Ibragimov vs. Basharat @135\n• Bush vs. Fores
  t @155\n• Schulte vs. Zaynukov @155\n• Van Steenis vs. Watley @155\n• Zende
  li vs. Chaaban @170\n• Sheridan vs. Vake @170\n\nhttps://pflmma.com/event/p
- fl-tampa\n\nAccurate as of Aug 15\, 8:09 PM UTC
+ fl-tampa\n\nAccurate as of Aug 16\, 12:35 AM UTC
 LOCATION:Benchmark International Arena\, Tampa\, FL
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena11
 SUMMARY:PFL MENA 11
-DTSTAMP:20260815T200953Z
+DTSTAMP:20260816T003545Z
 DTSTART;TZID=America/New_York:20261002T210000
 DTEND;TZID=America/New_York:20261003T000000
-DESCRIPTION:https://pflmma.com/event/pflmena11\n\nAccurate as of Aug 15\, 8
- :09 PM UTC
+DESCRIPTION:https://pflmma.com/event/pflmena11\n\nAccurate as of Aug 16\, 1
+ 2:35 AM UTC
 LOCATION:Riyadh\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/newsletter#pfl-africa-morocco-sat-oct-10
 SUMMARY:PFL Africa Morocco
-DTSTAMP:20260815T200953Z
+DTSTAMP:20260816T003545Z
 DTSTART;TZID=America/New_York:20261010T210000
 DTEND;TZID=America/New_York:20261011T000000
 DESCRIPTION:More info coming soon\n\nhttps://pflmma.com/newsletter#pfl-afri
- ca-morocco-sat-oct-10\n\nAccurate as of Aug 15\, 8:09 PM UTC
+ ca-morocco-sat-oct-10\n\nAccurate as of Aug 16\, 12:35 AM UTC
 LOCATION:CASABLANCA
 END:VEVENT
 END:VCALENDAR
