@@ -29,7 +29,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-tampa
 SUMMARY:PFL Tampa
-DTSTAMP:20260822T081513Z
+DTSTAMP:20260822T121529Z
 DTSTART;TZID=America/New_York:20260822T210000
 DTEND;TZID=America/New_York:20260823T000000
 DESCRIPTION:• Cyborg vs. Vieira @145\n• Rabadanov vs. Reeder @155\n• Santos
@@ -37,49 +37,49 @@ DESCRIPTION:• Cyborg vs. Vieira @145\n• Rabadanov vs. Reeder @155\n• Santo
  omedov vs. Marcos @135\n• Ibragimov vs. Basharat @135\n• Bush vs. Forest @1
  55\n• Schulte vs. Zaynukov @155\n• Van Steenis vs. Watley @155\n• Sheridan 
  vs. Vake @170\n\nhttps://pflmma.com/event/pfl-tampa\n\nAccurate as of Aug 2
- 2\, 8:15 AM UTC
+ 2\, 12:15 PM UTC
 LOCATION:Benchmark International Arena\, Tampa\, FL
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena11
 SUMMARY:PFL MENA 11
-DTSTAMP:20260822T081513Z
+DTSTAMP:20260822T121529Z
 DTSTART;TZID=America/New_York:20261002T210000
 DTEND;TZID=America/New_York:20261003T000000
-DESCRIPTION:https://pflmma.com/event/pflmena11\n\nAccurate as of Aug 22\, 8
- :15 AM UTC
+DESCRIPTION:https://pflmma.com/event/pflmena11\n\nAccurate as of Aug 22\, 1
+ 2:15 PM UTC
 LOCATION:Riyadh\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-morocco
 SUMMARY:PFL Africa Morocco
-DTSTAMP:20260822T081513Z
+DTSTAMP:20260822T121529Z
 DTSTART;TZID=America/New_York:20261010T210000
 DTEND;TZID=America/New_York:20261011T000000
 DESCRIPTION:• Kane vs. Medkouri @265\n• Henniene vs. Uchegbu @135\n• Boris 
  Esperanca vs. Nguphane @170\n• Ocheme vs. Thompson @155\n• Pereira vs. Samu
  el @170\n• Seck vs. Al Kurdi @155\n• Joseph vs. Godogo @135\n\nhttps://pflm
- ma.com/event/pfl-morocco\n\nAccurate as of Aug 22\, 8:15 AM UTC
+ ma.com/event/pfl-morocco\n\nAccurate as of Aug 22\, 12:15 PM UTC
 LOCATION:CASABLANCA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/2026-chicago2
 SUMMARY:PFL Chicago 2  2026
-DTSTAMP:20260822T081513Z
+DTSTAMP:20260822T121529Z
 DTSTART;TZID=America/New_York:20261016T210000
 DTEND;TZID=America/New_York:20261017T000000
 DESCRIPTION:• Carmouche vs. Bishop @\n\nhttps://pflmma.com/event/2026-chica
- go2\n\nAccurate as of Aug 22\, 8:15 AM UTC
+ go2\n\nAccurate as of Aug 22\, 12:15 PM UTC
 LOCATION:Wintrust Arena
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-returns-to-dubai
 SUMMARY:PFL Returns to Dubai
-DTSTAMP:20260822T081513Z
+DTSTAMP:20260822T121529Z
 DTSTART;TZID=America/New_York:20261114T210000
 DTEND;TZID=America/New_York:20261115T000000
 DESCRIPTION:https://pflmma.com/event/pfl-returns-to-dubai\n\nAccurate as of
-  Aug 22\, 8:15 AM UTC
+  Aug 22\, 12:15 PM UTC
 LOCATION:Dubai\, United Arab Emirates
 END:VEVENT
 END:VCALENDAR
