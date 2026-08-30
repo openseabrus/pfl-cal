@@ -29,54 +29,54 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena11
 SUMMARY:PFL MENA 11
-DTSTAMP:20260830T185408Z
+DTSTAMP:20260830T221210Z
 DTSTART;TZID=America/New_York:20261002T210000
 DTEND;TZID=America/New_York:20261003T000000
-DESCRIPTION:https://pflmma.com/event/pflmena11\n\nAccurate as of Aug 30\, 6
- :54 PM UTC
+DESCRIPTION:https://pflmma.com/event/pflmena11\n\nAccurate as of Aug 30\, 1
+ 0:12 PM UTC
 LOCATION:Riyadh\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-morocco
 SUMMARY:PFL Africa Morocco
-DTSTAMP:20260830T185408Z
+DTSTAMP:20260830T221210Z
 DTSTART;TZID=America/New_York:20261010T210000
 DTEND;TZID=America/New_York:20261011T000000
 DESCRIPTION:• Kane vs. Medkouri @265\n• Henniene vs. Uchegbu @135\n• Boris 
  Esperanca vs. Nguphane @170\n• Ocheme vs. Thompson @155\n• Pereira vs. Samu
  el @170\n• Seck vs. Al Kurdi @155\n• Joseph vs. Godogo @135\n\nhttps://pflm
- ma.com/event/pfl-morocco\n\nAccurate as of Aug 30\, 6:54 PM UTC
+ ma.com/event/pfl-morocco\n\nAccurate as of Aug 30\, 10:12 PM UTC
 LOCATION:CASABLANCA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/2026-chicago2
 SUMMARY:PFL Chicago
-DTSTAMP:20260830T185408Z
+DTSTAMP:20260830T221210Z
 DTSTART;TZID=America/New_York:20261016T030000
 DTEND;TZID=America/New_York:20261016T060000
 DESCRIPTION:• Carmouche vs. Bishop @\n• Goltsov vs. Djantou Nana @265\n• Kh
  amidov vs. do Nascimento @135\n\nhttps://pflmma.com/event/2026-chicago2\n\n
- Accurate as of Aug 30\, 6:54 PM UTC
+ Accurate as of Aug 30\, 10:12 PM UTC
 LOCATION:Wintrust Arena
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-returns-to-dubai
 SUMMARY:PFL Returns to Dubai
-DTSTAMP:20260830T185408Z
+DTSTAMP:20260830T221210Z
 DTSTART;TZID=America/New_York:20261114T210000
 DTEND;TZID=America/New_York:20261115T000000
 DESCRIPTION:https://pflmma.com/event/pfl-returns-to-dubai\n\nAccurate as of
-  Aug 30\, 6:54 PM UTC
+  Aug 30\, 10:12 PM UTC
 LOCATION:Dubai\, United Arab Emirates
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-lyon-2026
 SUMMARY:PFL Lyon 2026
-DTSTAMP:20260830T185408Z
+DTSTAMP:20260830T221210Z
 DTSTART;TZID=America/New_York:20261219T210000
 DTEND;TZID=America/New_York:20261220T000000
 DESCRIPTION:https://pflmma.com/event/pfl-lyon-2026\n\nAccurate as of Aug 30
- \, 6:54 PM UTC
+ \, 10:12 PM UTC
 LOCATION:Lyon\, France
 END:VEVENT
 END:VCALENDAR
