@@ -29,57 +29,57 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena11
 SUMMARY:PFL MENA 11
-DTSTAMP:20260902T081159Z
+DTSTAMP:20260902T153042Z
 DTSTART;TZID=America/New_York:20261002T210000
 DTEND;TZID=America/New_York:20261003T000000
 DESCRIPTION:• Diani vs. Kayyali @170\n• Kooheji vs. Boudegzdame @145\n• Dji
  roun vs. Shalaan @155\n• Hussein vs. Zouad @170\n• Saadi vs. Kabbani @145\n
  • Fahmi vs. El Sisy @155\n\nhttps://pflmma.com/event/pflmena11\n\nAccurate 
- as of Sep 2\, 8:11 AM UTC
+ as of Sep 2\, 3:30 PM UTC
 LOCATION:Riyadh\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-morocco
 SUMMARY:PFL Africa Morocco
-DTSTAMP:20260902T081159Z
+DTSTAMP:20260902T153042Z
 DTSTART;TZID=America/New_York:20261010T210000
 DTEND;TZID=America/New_York:20261011T000000
 DESCRIPTION:• Kane vs. Medkouri @265\n• Henniene vs. Uchegbu @135\n• Boris 
  Esperanca vs. Nguphane @170\n• Ocheme vs. Thompson @155\n• Pereira vs. Samu
  el @170\n• Seck vs. Al Kurdi @155\n• Joseph vs. Godogo @135\n\nhttps://pflm
- ma.com/event/pfl-morocco\n\nAccurate as of Sep 2\, 8:11 AM UTC
+ ma.com/event/pfl-morocco\n\nAccurate as of Sep 2\, 3:30 PM UTC
 LOCATION:CASABLANCA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/2026-chicago2
 SUMMARY:PFL Chicago 2
-DTSTAMP:20260902T081159Z
+DTSTAMP:20260902T153042Z
 DTSTART;TZID=America/New_York:20261016T030000
 DTEND;TZID=America/New_York:20261016T060000
 DESCRIPTION:• Carmouche vs. Bishop @\n• Khizriev vs. Braga @145\n• Goltsov 
  vs. Djantou Nana @265\n• Shabliy vs. Ward @135\n• Khamidov vs. do Nasciment
  o @135\n\nhttps://pflmma.com/event/2026-chicago2\n\nAccurate as of Sep 2\, 
- 8:11 AM UTC
+ 3:30 PM UTC
 LOCATION:Wintrust Arena
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-returns-to-dubai
 SUMMARY:PFL Returns to Dubai
-DTSTAMP:20260902T081159Z
+DTSTAMP:20260902T153042Z
 DTSTART;TZID=America/New_York:20261114T210000
 DTEND;TZID=America/New_York:20261115T000000
 DESCRIPTION:https://pflmma.com/event/pfl-returns-to-dubai\n\nAccurate as of
-  Sep 2\, 8:11 AM UTC
+  Sep 2\, 3:30 PM UTC
 LOCATION:Dubai\, United Arab Emirates
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-lyon-2026
 SUMMARY:PFL Lyon 2026
-DTSTAMP:20260902T081159Z
+DTSTAMP:20260902T153042Z
 DTSTART;TZID=America/New_York:20261219T210000
 DTEND;TZID=America/New_York:20261220T000000
 DESCRIPTION:https://pflmma.com/event/pfl-lyon-2026\n\nAccurate as of Sep 2\
- , 8:11 AM UTC
+ , 3:30 PM UTC
 LOCATION:Lyon\, France
 END:VEVENT
 END:VCALENDAR
