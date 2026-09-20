@@ -29,60 +29,61 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena11
 SUMMARY:PFL MENA 11
-DTSTAMP:20260920T150143Z
+DTSTAMP:20260920T182128Z
 DTSTART;TZID=America/New_York:20261002T210000
 DTEND;TZID=America/New_York:20261003T000000
-DESCRIPTION:• Diani vs. Kayyali @170\n• Kooheji vs. Boudegzdame @145\n• Dji
- roun vs. Shalaan @155\n• Hussein vs. Zouad @170\n• Saadi vs. Kabbani @145\n
- • Fahmi vs. El Sisy @155\n\nhttps://pflmma.com/event/pflmena11\n\nAccurate 
- as of Sep 20\, 3:01 PM UTC
+DESCRIPTION:• Rashed Neda vs. El Saidy @205\n• Diani vs. Kayyali @170\n• Ko
+ oheji vs. Boudegzdame @145\n• Djiroun vs. Shalaan @155\n• Hussein vs. Zouad
+  @170\n• Shaaban vs. Ghanem @155\n• Saadi vs. Kabbani @145\n• Fahmi vs. El 
+ Sisy @155\n• Al Ammari vs. Lounes @135\n\nhttps://pflmma.com/event/pflmena1
+ 1\n\nAccurate as of Sep 20\, 6:21 PM UTC
 LOCATION:Riyadh\, KSA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-morocco
 SUMMARY:PFL Africa Morocco
-DTSTAMP:20260920T150143Z
+DTSTAMP:20260920T182128Z
 DTSTART;TZID=America/New_York:20261010T210000
 DTEND;TZID=America/New_York:20261011T000000
 DESCRIPTION:• Kane vs. Medkouri @265\n• Henniene vs. Uchegbu @135\n• Boris 
  Esperanca vs. Nguphane @170\n• Ocheme vs. Thompson @155\n• Pereira vs. Samu
  el @170\n• Seck vs. Al Kurdi @155\n• Joseph vs. Godogo @135\n\nhttps://pflm
- ma.com/event/pfl-morocco\n\nAccurate as of Sep 20\, 3:01 PM UTC
+ ma.com/event/pfl-morocco\n\nAccurate as of Sep 20\, 6:21 PM UTC
 LOCATION:CASABLANCA
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/2026-chicago2
 SUMMARY:PFL Chicago 2
-DTSTAMP:20260920T150143Z
+DTSTAMP:20260920T182128Z
 DTSTART;TZID=America/New_York:20261016T230000
 DTEND;TZID=America/New_York:20261017T020000
 DESCRIPTION:• Carmouche vs. Bishop @\n• Khizriev vs. Braga @145\n• Khamidov
   vs. do Nascimento @135\n• Tandia vs. Saint Louis @170\n• Sordi vs. Bably @
  205\n• Khizriev vs. Boylan @155\n• Clark vs. Acosta @125\n• Barão vs. Pease
   @155\n• Kubanza vs. Waters @170\n• Wisniewska vs. Hackett @125\n\nhttps://
- pflmma.com/event/2026-chicago2\n\nAccurate as of Sep 20\, 3:01 PM UTC
+ pflmma.com/event/2026-chicago2\n\nAccurate as of Sep 20\, 6:21 PM UTC
 LOCATION:Wintrust Arena
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-returns-to-dubai
 SUMMARY:PFL Dubai
-DTSTAMP:20260920T150143Z
+DTSTAMP:20260920T182128Z
 DTSTART;TZID=America/New_York:20261114T210000
 DTEND;TZID=America/New_York:20261115T000000
 DESCRIPTION:• Nemkov vs. Bilostenniy @265\n• Rahmani vs. Popov @265\n• Nurm
  agomedov vs. Martinez @170\n• Pettis vs. Goto @135\n• Magomedsharipov vs. B
  orics @145\n\nhttps://pflmma.com/event/pfl-returns-to-dubai\n\nAccurate as 
- of Sep 20\, 3:01 PM UTC
+ of Sep 20\, 6:21 PM UTC
 LOCATION:Dubai\, United Arab Emirates
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-lyon-2026
 SUMMARY:PFL Lyon
-DTSTAMP:20260920T150143Z
+DTSTAMP:20260920T182128Z
 DTSTART;TZID=America/New_York:20261219T140000
 DTEND;TZID=America/New_York:20261219T170000
 DESCRIPTION:• Lapilus vs. McKee @135\n• Atangana vs. Battle @185\n\nhttps:/
- /pflmma.com/event/pfl-lyon-2026\n\nAccurate as of Sep 20\, 3:01 PM UTC
+ /pflmma.com/event/pfl-lyon-2026\n\nAccurate as of Sep 20\, 6:21 PM UTC
 LOCATION:Lyon\, France
 END:VEVENT
 END:VCALENDAR
