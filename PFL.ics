@@ -29,7 +29,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-returns-to-dubai
 SUMMARY:PFL Dubai
-DTSTAMP:20261027T092437Z
+DTSTAMP:20261027T165823Z
 DTSTART;TZID=America/New_York:20261114T130000
 DTEND;TZID=America/New_York:20261114T160000
 DESCRIPTION:• Nemkov vs. Bilostenniy @265\n• Habirora vs. El Dafrawy @170\n
@@ -38,42 +38,42 @@ DESCRIPTION:• Nemkov vs. Bilostenniy @265\n• Habirora vs. El Dafrawy @170\n
   Khaybulaev @145\n• Pergande vs. Magomedov @155\n• Magomedsharipov vs. Bori
  cs @145\n• Goltsov vs. Djantou Nana @265\n• Rodriguez vs. McKee @170\n• Nab
  iev vs. Ngono @205\n• Abaev vs. Hill @170\n\nhttps://pflmma.com/event/pfl-r
- eturns-to-dubai\n\nAccurate as of Oct 27\, 9:24 AM UTC
+ eturns-to-dubai\n\nAccurate as of Oct 27\, 4:58 PM UTC
 LOCATION:Coca-Cola Arena\, Dubai
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena-12
 SUMMARY:PFL Khobar
-DTSTAMP:20261027T092437Z
+DTSTAMP:20261027T165823Z
 DTSTART;TZID=America/New_York:20261211T210000
 DTEND;TZID=America/New_York:20261212T000000
 DESCRIPTION:• Zouad vs. Diani @170\n• Fahmi vs. Djiroun @155\n• Boudegzdame
   vs. Saadi @145\n\nhttps://pflmma.com/event/pflmena-12\n\nAccurate as of Oc
- t 27\, 9:24 AM UTC
+ t 27\, 4:58 PM UTC
 LOCATION:Dhahran Expo\, Khobar\, Saudi Arabia
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-africa-kigali-2026
 SUMMARY:PFL Africa Kigali
-DTSTAMP:20261027T092437Z
+DTSTAMP:20261027T165823Z
 DTSTART;TZID=America/New_York:20261212T210000
 DTEND;TZID=America/New_York:20261213T000000
 DESCRIPTION:• Boris Esperança vs. Samuel @170\n• Ocheme vs. Seck @155\n• Jo
  seph vs. Uchegbu @135\n\nhttps://pflmma.com/event/pfl-africa-kigali-2026\n\
- nAccurate as of Oct 27\, 9:24 AM UTC
+ nAccurate as of Oct 27\, 4:58 PM UTC
 LOCATION:BK Arena\, Kigali\, Rwanda
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-lyon-2026
 SUMMARY:PFL Lyon
-DTSTAMP:20261027T092437Z
+DTSTAMP:20261027T165823Z
 DTSTART;TZID=America/New_York:20261219T150000
 DTEND;TZID=America/New_York:20261219T180000
 DESCRIPTION:• Lapilus vs. McKee @135\n• Atangana vs. Battle @185\n• Abdoura
  guimov vs. Binder @170\n• Edwards vs. Bouafia @185\n• Adiguzel vs. Gittins 
  @135\n• Gassama vs. Bradford @205\n• Brachet vs. Meskini @145\n• Aschenbren
  ner vs. Chipito @115\n\nhttps://pflmma.com/event/pfl-lyon-2026\n\nAccurate 
- as of Oct 27\, 9:24 AM UTC
+ as of Oct 27\, 4:58 PM UTC
 LOCATION:LDLC Arena\, Lyon\, France
 END:VEVENT
 END:VCALENDAR
