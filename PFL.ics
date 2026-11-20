@@ -29,32 +29,32 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena-12
 SUMMARY:PFL MENA 12
-DTSTAMP:20261120T121739Z
+DTSTAMP:20261120T222510Z
 DTSTART;TZID=America/New_York:20261211T210000
 DTEND;TZID=America/New_York:20261212T000000
 DESCRIPTION:• Zouad vs. Diani @170\n• Fahmi vs. Djiroun @155\n• Boudegzdame
   vs. Saadi @145\n• Albrahim vs. Ahmed Moustafa @170\n• Basahel vs. Taha @12
  5\n• Al Ammari vs. Wakim @160\n• Marhoon vs. Grimes @125\n• Al-Hammadi vs. 
  Osmani @160\n\nhttps://pflmma.com/event/pflmena-12\n\nAccurate as of Nov 20
- \, 12:17 PM UTC
+ \, 10:25 PM UTC
 LOCATION:Dhahran Expo\, Khobar\, Saudi Arabia
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-africa-kigali-2026
 SUMMARY:PFL Africa Kigali
-DTSTAMP:20261120T121739Z
+DTSTAMP:20261120T222510Z
 DTSTART;TZID=America/New_York:20261212T210000
 DTEND;TZID=America/New_York:20261213T000000
 DESCRIPTION:• Boris Esperança vs. Samuel @170\n• Joseph vs. Uchegbu @135\n•
   Ukah vs. Van Rooij @115\n• Mugo vs. Kiala @115\n• Godogo vs. Errami @135\n
  \nhttps://pflmma.com/event/pfl-africa-kigali-2026\n\nAccurate as of Nov 20\
- , 12:17 PM UTC
+ , 10:25 PM UTC
 LOCATION:BK Arena\, Kigali\, Rwanda
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-lyon-2026
 SUMMARY:PFL Lyon
-DTSTAMP:20261120T121739Z
+DTSTAMP:20261120T222510Z
 DTSTART;TZID=America/New_York:20261219T150000
 DTEND;TZID=America/New_York:20261219T180000
 DESCRIPTION:• Lapilus vs. McKee @135\n• Atangana vs. Battle @185\n• Abdoura
@@ -63,7 +63,7 @@ DESCRIPTION:• Lapilus vs. McKee @135\n• Atangana vs. Battle @185\n• Abdour
  s. Meredith @135\n• Partida vs. Cieplowski @135\n• Brachet vs. Meskini @145
  \n• Hamou vs. Bouazza @145\n• Parente vs. Shehu @155\n• Aschenbrenner vs. C
  hipito @115\n\nhttps://pflmma.com/event/pfl-lyon-2026\n\nAccurate as of Nov
-  20\, 12:17 PM UTC
+  20\, 10:25 PM UTC
 LOCATION:LDLC Arena\, Lyon\, France
 END:VEVENT
 END:VCALENDAR
