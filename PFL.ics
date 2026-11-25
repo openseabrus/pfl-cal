@@ -29,52 +29,52 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-dubai-2026
 SUMMARY:PFL Dubai
-DTSTAMP:20261124T191034Z
-DTSTART;TZID=America/New_York:20261124T210000
-DTEND;TZID=America/New_York:20261125T000000
-DESCRIPTION:• Overeem vs. Manuwa @265\n• Harvey vs. Morgan @155\n\nhttps://
- pflmma.com/event/pfl-dubai-2026\n\nAccurate as of Nov 24\, 7:10 PM UTC
+DTSTAMP:20261125T031322Z
+DTSTART;TZID=America/New_York:20261125T210000
+DTEND;TZID=America/New_York:20261126T000000
+DESCRIPTION:• Harvey vs. Morgan @155\n\nhttps://pflmma.com/event/pfl-dubai-
+ 2026\n\nAccurate as of Nov 25\, 3:13 AM UTC
 LOCATION:
 END:VEVENT
 BEGIN:VEVENT
-UID:https://pflmma.com/newsletter#pfl-san-juan-tue-nov-24
+UID:https://pflmma.com/newsletter#pfl-san-juan-wed-nov-25
 SUMMARY:PFL San Juan
-DTSTAMP:20261124T191034Z
-DTSTART;TZID=America/New_York:20261124T210000
-DTEND;TZID=America/New_York:20261125T000000
+DTSTAMP:20261125T031322Z
+DTSTART;TZID=America/New_York:20261125T210000
+DTEND;TZID=America/New_York:20261126T000000
 DESCRIPTION:More info coming soon\n\nhttps://pflmma.com/newsletter#pfl-san-
- juan-tue-nov-24\n\nAccurate as of Nov 24\, 7:10 PM UTC
+ juan-wed-nov-25\n\nAccurate as of Nov 25\, 3:13 AM UTC
 LOCATION:
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pflmena-12
 SUMMARY:PFL MENA 12
-DTSTAMP:20261124T191034Z
+DTSTAMP:20261125T031322Z
 DTSTART;TZID=America/New_York:20261211T210000
 DTEND;TZID=America/New_York:20261212T000000
 DESCRIPTION:• Zouad vs. Diani @170\n• Fahmi vs. Djiroun @155\n• Boudegzdame
   vs. Saadi @145\n• Albrahim vs. Ahmed Moustafa @170\n• Basahel vs. Taha @12
  5\n• Al Ammari vs. Wakim @160\n• Marhoon vs. Grimes @125\n• Al-Hammadi vs. 
- Osmani @160\n\nhttps://pflmma.com/event/pflmena-12\n\nAccurate as of Nov 24
- \, 7:10 PM UTC
+ Osmani @160\n\nhttps://pflmma.com/event/pflmena-12\n\nAccurate as of Nov 25
+ \, 3:13 AM UTC
 LOCATION:Dhahran Expo\, Khobar\, Saudi Arabia
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-africa-kigali-2026
 SUMMARY:PFL Africa Kigali
-DTSTAMP:20261124T191034Z
+DTSTAMP:20261125T031322Z
 DTSTART;TZID=America/New_York:20261212T210000
 DTEND;TZID=America/New_York:20261213T000000
 DESCRIPTION:• Boris Esperança vs. Samuel @170\n• Joseph vs. Uchegbu @135\n•
   Ukah vs. Van Rooij @115\n• Mugo vs. Kiala @115\n• Godogo vs. Errami @135\n
- \nhttps://pflmma.com/event/pfl-africa-kigali-2026\n\nAccurate as of Nov 24\
- , 7:10 PM UTC
+ \nhttps://pflmma.com/event/pfl-africa-kigali-2026\n\nAccurate as of Nov 25\
+ , 3:13 AM UTC
 LOCATION:BK Arena\, Kigali\, Rwanda
 END:VEVENT
 BEGIN:VEVENT
 UID:https://pflmma.com/event/pfl-lyon-2026
 SUMMARY:PFL Lyon
-DTSTAMP:20261124T191034Z
+DTSTAMP:20261125T031322Z
 DTSTART;TZID=America/New_York:20261219T150000
 DTEND;TZID=America/New_York:20261219T180000
 DESCRIPTION:• Lapilus vs. McKee @135\n• Atangana vs. Battle @185\n• Abdoura
@@ -82,7 +82,7 @@ DESCRIPTION:• Lapilus vs. McKee @135\n• Atangana vs. Battle @185\n• Abdour
  5\n• Adiguzel vs. Cartwright @135\n• Gassama vs. Bradford @205\n• Garnett v
  s. Meredith @135\n• Brachet vs. Meskini @145\n• Hamou vs. Bouazza @145\n• P
  arente vs. Shehu @155\n• Aschenbrenner vs. Chipito @115\n\nhttps://pflmma.c
- om/event/pfl-lyon-2026\n\nAccurate as of Nov 24\, 7:10 PM UTC
+ om/event/pfl-lyon-2026\n\nAccurate as of Nov 25\, 3:13 AM UTC
 LOCATION:LDLC Arena\, Lyon\, France
 END:VEVENT
 END:VCALENDAR
